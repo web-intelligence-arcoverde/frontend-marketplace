@@ -1,0 +1,18 @@
+.section-title{
+  border-bottom:2px solid var(--primary);
+  padding-bottom:7px;
+  margin: 20px 0;
+  display: inline-block;
+}
+.box-sidebar {
+  max-height: 508px;
+  overflow-y: auto;
+}
+.products{
+  margin-top: 30px;
+}
+.products h4{
+  border-bottom:2px solid var(--primary);
+  width: 29%;
+
+}

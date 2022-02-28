@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Cadastro from './pages/cadastro/index';
-import './styles/global.css';
+import Routes from './routes'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Cadastro />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root'),
 );
