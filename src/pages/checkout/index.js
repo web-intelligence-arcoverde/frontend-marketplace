@@ -1,9 +1,19 @@
 import React from 'react';
+// import dayjs from 'dayjs';
+import { useSelector } from 'react-redux';
+
+
 import Header from '../../components/header';
 import Product from '../../components/product/list';
 import './style.css';
 
 function checkout() {
+
+  const { cart } = useSelector(state => state.shop)
+  // const{ transaction, setTransaction } = useState({
+
+  // });
+
   return (
   <div className='h-100'>
     <Header hideCart/>
@@ -68,10 +78,10 @@ function checkout() {
             </div>
         </div>
         <div className='col-6 products'>
-            <h4>Minha Sacola (5)</h4>
+            <h4>Minha Sacola ({cart.length })</h4>
           <div className='box col mb-4 box-sidebar '>
             <div className='row '>
-              {[1,2,3,4,5,6,7,8,9].map(() => (<Product/>))} 
+              {cart.map((p) => (<Product product={p} />))} 
             </div>
           </div>
         </div>

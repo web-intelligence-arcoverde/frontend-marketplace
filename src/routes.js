@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import { BrowserRouter , Routes, Route} from 'react-router-dom'
 import Sidebar from './components/sidebar/index';
@@ -13,12 +14,12 @@ function Router(){
   <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<Home/>} />
-      <Route exact path='/petshop' element={<PetShop/>} />
+      <Route exact path='/petshop/:id' element={<PetShop/>} />
       <Route exact path='/checkout' element={<Checkout/>} />
       <Route exact path='/cadastro' element={<Cadastro/>} />
+      <Sidebar />
     </Routes>
   </BrowserRouter>
-  <Sidebar/>
 </>
   );
 };

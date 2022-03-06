@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { useSelector } from 'react-redux';
+
 import Logo from '../../assets/svg/logo.svg'
 import LogoWhite from '../../assets/svg/logo-white.svg'
 import './style.css'
@@ -7,6 +10,8 @@ import './style.css'
 
 function header({WhiteVersion ,  hideCart}) {
   
+  const { cart } = useSelector((state)=> state.shop)
+
   const openDrawer = () => {
     const event = new CustomEvent('openCart');
     window.dispatchEvent(event)
@@ -24,7 +29,8 @@ function header({WhiteVersion ,  hideCart}) {
       className='btn btn-secondary cart-button'
       >
       <span className='mdi mdi-cart' />
-      2 items
+      {cart.length} 
+      items
     </button>
     )}
 </div> );

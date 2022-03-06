@@ -1,28 +1,40 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import Ration from '../../../assets/images/Image.png'
+import { useDispatch } from 'react-redux';
+import { toogleCartProduct } from '../../../store/modules/shop/actions';
+
 import './style.css';
 
-function product() {
+function Product({ product }) {
+
+  const dispatch = useDispatch();
+
   return (
     <div className='product-list col-12'>
       <div className='row'>
         <div className='col-3'>
-          <img src={Ration} alt='fds' />
+          <img src={product.capa} alt='fds' />
         </div>
         <div className='col-6 '>
           <h6>
-            <label className='badge badge-primary'>R$ 30,00</label>
+            <label className='badge badge-primary'>R$ {product.preco.toFixed(2)}</label>
           </h6>
           <small>
-            <b>Ração Magnus Todo Dia Sabor Carne para Cães Adultos - 15 Kg</b>
+            <b>{product.nome}</b>
           </small>
         </div>
         <div className='col-3'>
-          <button type='button'className='btn' >-</button>
+          <button 
+          type='button' 
+          onClick={() =>  
+            dispatch(toogleCartProduct(product))} 
+          className='btn' >
+            -
+          </button>
         </div>
       </div>
     </div>);
 }
 
-export default product;
+export default Product;
