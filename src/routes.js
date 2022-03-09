@@ -5,6 +5,7 @@ import Cadastro from './pages/cadastro/index';
 import Checkout from './pages/checkout/index';
 import PetShop from './pages/petshop/index';
 import Home from './pages/home';
+
 import './styles/global.css';
 
 function Router() {
