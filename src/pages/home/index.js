@@ -13,6 +13,7 @@ import { requestPetshops } from '../../store/modules/shop/actions';
 function home() {
   const dipatch = useDispatch();
   const { petshops } = useSelector((state) => state.shop);
+
   useEffect(() => {
     dipatch(requestPetshops());
   }, []);
