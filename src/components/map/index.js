@@ -2,11 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from '../marker';
-import './style.css';
+import { AddCoordinate, ContainerMap } from './style';
 
 function Map({ petshops }) {
   const [positionUser, setPositionUser] = useState({});
   const [loading, setLoading] = useState(true);
+  const [market, setMarket] = useState({});
+
+  const [addMarket, setAddMarket] = useState(false);
+
   console.log(loading);
 
   useEffect(() => {
@@ -25,8 +29,11 @@ function Map({ petshops }) {
   }, []);
 
   return (
-    <div className="container-map">
+    <ContainerMap>
       <GoogleMapReact
+        onClick={(ev) => {
+          console.log(ev);
+        }}
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
         center={positionUser}
         defaultZoom={15}
@@ -35,7 +42,11 @@ function Map({ petshops }) {
           <Marker petshop={p} lat={p.location.lat} lng={p.location.lng} />
         ))}
       </GoogleMapReact>
-    </div>
+      <AddCoordinate onClick={() => setAddMarket(!addMarket)}>
+        {' '}
+        Add{' '}
+      </AddCoordinate>
+    </ContainerMap>
   );
 }
 export default Map;
