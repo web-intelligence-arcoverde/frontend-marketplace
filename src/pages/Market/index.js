@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 import { requestPetshop } from '../../store/modules/shop/actions';
 
-import Header from '../../components/header';
-import Card from '../../components/product/card';
+import Header from '../../components/Header';
+import Card from '../../components/Product/Card';
 import './style.css';
 
 function Market() {
