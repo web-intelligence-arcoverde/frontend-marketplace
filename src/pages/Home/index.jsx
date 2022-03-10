@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Container } from '../../components/atoms/Container';
 
-const Search = () => {
+function Search() {
   const navigate = useNavigate();
 
   return (
@@ -32,6 +32,6 @@ const Search = () => {
       </button>
     </Container>
   );
-};
+}
 
 export default Search;
