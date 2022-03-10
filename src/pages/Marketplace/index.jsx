@@ -8,14 +8,14 @@ import Map from '../../components/Map';
 
 import Sidebar from '../../components/Sidebar';
 
-import { requestPetshops } from '../../store/modules/shop/actions';
+import { readMarketRequest } from '../../store/modules/market/actions';
 
 export default function Marketplace() {
-  const dipatch = useDispatch();
-  const { petshops } = useSelector((state) => state.shop);
+  const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.market);
 
   useEffect(() => {
-    dipatch(requestPetshops());
+    dispatch(readMarketRequest());
   }, []);
 
   return (
@@ -25,13 +25,13 @@ export default function Marketplace() {
         <div className="col-12 px-4 text-center">
           <h5>Mais proximos de voce</h5>
           <ul className="col-12 petshop-list ">
-            {petshops.map((p) => (
-              <Petshop petshops={p} key={p.id} />
+            {data.map((p) => (
+              <Petshop petshops={p} />
             ))}
           </ul>
         </div>
       </div>
-      <Map petshops={petshops} />
+      <Map petshops={data} />
       <Sidebar />
     </div>
   );
