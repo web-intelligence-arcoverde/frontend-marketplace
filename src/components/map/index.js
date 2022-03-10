@@ -12,7 +12,6 @@ import { createMarketRequest } from '../../store/modules/market/actions';
 function Map({ petshops }) {
   const [positionUser, setPositionUser] = useState({});
   const [loading, setLoading] = useState(true);
-  const [market, setMarket] = useState({});
 
   const [addMarket, setAddMarket] = useState(false);
 
@@ -54,9 +53,6 @@ function Map({ petshops }) {
   return (
     <ContainerMap>
       <GoogleMapReact
-        onClick={(ev) => {
-          console.log(ev);
-        }}
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
         center={positionUser}
         defaultZoom={15}
@@ -67,8 +63,7 @@ function Map({ petshops }) {
         ))}
       </GoogleMapReact>
       <AddCoordinate onClick={() => setAddMarket(!addMarket)}>
-        {' '}
-        Add{' '}
+        Add
       </AddCoordinate>
     </ContainerMap>
   );
