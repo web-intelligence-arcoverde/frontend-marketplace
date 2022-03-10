@@ -29,7 +29,7 @@ function SignIn() {
       </ColumnLeft>
       <CardForm>
         <LogoVisble src={Shoping} alt="logo" />
-        <h3>Fazer Login</h3>
+        <h3>Entrar</h3>
         <FormSingIn>
           <input
             type="email"

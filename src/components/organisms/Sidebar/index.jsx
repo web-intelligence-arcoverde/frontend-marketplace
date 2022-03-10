@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Dock } from 'react-dock';
-import Product from '../product/list';
+import Product from '../ProductList';
 import './style.css';
 
-function sidebar() {
+function Sidebar() {
   const { cart } = useSelector((state) => state.shop);
   const total = cart.reduce((max, product) => {
     return max + product.preco;
@@ -51,4 +51,4 @@ function sidebar() {
   );
 }
 
-export default sidebar;
+export default Sidebar;

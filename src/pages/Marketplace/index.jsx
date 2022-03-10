@@ -2,20 +2,20 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import React, { useEffect } from 'react';
 import './style.css';
-import Header from '../../components/header';
-import Petshop from '../../components/petshop';
-import Map from '../../components/map';
+import Header from '../../components/organisms/Header';
+import Petshop from '../../components/molecules/MarketCard';
+import Map from '../../components/organisms/Map';
 
-import Sidebar from '../../components/sidebar';
+import Sidebar from '../../components/organisms/Sidebar';
 
-import { requestPetshops } from '../../store/modules/shop/actions';
+import { readMarketRequest } from '../../store/modules/market/actions';
 
 export default function Marketplace() {
-  const dipatch = useDispatch();
-  const { petshops } = useSelector((state) => state.shop);
+  const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.market);
 
   useEffect(() => {
-    dipatch(requestPetshops());
+    dispatch(readMarketRequest());
   }, []);
 
   return (
@@ -25,13 +25,13 @@ export default function Marketplace() {
         <div className="col-12 px-4 text-center">
           <h5>Mais proximos de voce</h5>
           <ul className="col-12 petshop-list ">
-            {petshops.map((p) => (
-              <Petshop petshops={p} key={p.id} />
+            {data.map((p) => (
+              <Petshop petshops={p} />
             ))}
           </ul>
         </div>
       </div>
-      <Map petshops={petshops} />
+      <Map petshops={data} />
       <Sidebar />
     </div>
   );

@@ -48,7 +48,7 @@ export const FormSingIn = styled.form`
   height: 200px;
   gap: 20px;
   input {
-    width: 300px;
+    width: 100%;
     height: 48px;
     padding-left: 10px;
     border: none;
@@ -60,7 +60,7 @@ export const FormSingIn = styled.form`
   button {
     background-color: #fa643d;
     color: #fff;
-    width: 300px;
+    width: 100%;
     height: 48px;
     border-radius: 4px;
     border: none;

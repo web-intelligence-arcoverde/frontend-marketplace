@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AutoComplete from 'react-google-autocomplete';
+
 import { useNavigate } from 'react-router-dom';
 
 import { Container } from '../../components/atoms/Container';
@@ -10,10 +12,11 @@ function Search() {
   return (
     <Container>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Procure pela sua cidade"
+        <AutoComplete
+          apiKey="AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo"
+          onPlaceSelected={(place) => {
+            console.log(place);
+          }}
         />
         <button type="button" className="btn btn-secondary">
           Procurar
