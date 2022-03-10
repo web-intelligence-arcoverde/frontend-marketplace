@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCostumer as setStoreCostumer } from '../../store/modules/shop/actions';
-import { Container, FormSingIn } from './styles';
+import { CardForm, ColumnLeft, Container, FormSingIn } from './styles';
+import Shoping from '../../assets/svg/shoping.svg';
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -17,38 +18,44 @@ function SignIn() {
 
   return (
     <Container>
-      <FormSingIn>
-        <input
-          type="email"
-          required
-          className="form-control form-control-lg mb-3"
-          placeholder="E-mail"
-          onChange={(e) => {
-            setCostumer({ ...costumer, email: e.target.value });
-          }}
-        />
+      <ColumnLeft>
+        <img src={Shoping} alt="img" />
+      </ColumnLeft>
+      <CardForm>
+        <h3>Faça seu Login</h3>
+        <FormSingIn>
+          <input
+            type="email"
+            required
+            placeholder="E-mail"
+            onChange={(e) => {
+              setCostumer({ ...costumer, email: e.target.value });
+            }}
+          />
 
-        <input
-          type="password"
-          className="form-control form-control-lg mb-3"
-          placeholder="Senha"
-          onChange={(e) => {
-            setCostumer({
-              ...costumer,
-              password: e.target.value,
-            });
-          }}
-        />
+          <input
+            type="password"
+            placeholder="Senha"
+            onChange={(e) => {
+              setCostumer({
+                ...costumer,
+                password: e.target.value,
+              });
+            }}
+          />
 
-        <button
-          type="button"
-          onClick={() => {
-            goToCheckout();
-          }}
-        >
-          Entrar
-        </button>
-      </FormSingIn>
+          <button
+            type="button"
+            onClick={() => {
+              goToCheckout();
+            }}
+          >
+            Entrar
+          </button>
+        </FormSingIn>
+        <h5>Ou</h5>
+        <button type="submit">Entrar com o facebook</button>
+      </CardForm>
     </Container>
   );
 }
