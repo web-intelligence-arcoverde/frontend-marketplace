@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #ec7a5d;
+  color: #8b8b8b;
 `;
 
 export const CardForm = styled.div`
@@ -19,6 +20,13 @@ export const CardForm = styled.div`
   gap: 20px;
   border-radius: 10% 0 0 10%;
   background-color: #fff;
+  .my-facebook-button-class {
+    color: #3d61d6;
+    background-color: transparent;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+  }
 `;
 
 export const FormSingIn = styled.form`
@@ -35,6 +43,9 @@ export const FormSingIn = styled.form`
     padding-left: 10px;
     border: none;
     border-radius: 4px;
+    :focus {
+      border: 2px solid #fa643d;
+    }
   }
   button {
     background-color: #fa643d;
@@ -53,4 +64,16 @@ export const ColumnLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const Authentication = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    position: relative;
+    left: 50px;
+    width: 30px;
+  }
 `;
