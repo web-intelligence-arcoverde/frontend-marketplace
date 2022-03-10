@@ -3,7 +3,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCostumer as setStoreCostumer } from '../../store/modules/shop/actions';
-import { CardForm, ColumnLeft, Container, FormSingIn } from './styles';
+import {
+  CardForm,
+  ColumnLeft,
+  Container,
+  FormSingIn,
+  LogoVisble,
+} from './styles';
 import Shoping from '../../assets/svg/shoping.svg';
 import AuthenticationFace from '../../components/atoms/AuthenticationFace';
 
@@ -22,6 +28,7 @@ function SignIn() {
         <img src={Shoping} alt="logo" />
       </ColumnLeft>
       <CardForm>
+        <LogoVisble src={Shoping} alt="logo" />
         <h3>Fazer Login</h3>
         <FormSingIn>
           <input
@@ -51,7 +58,7 @@ function SignIn() {
             Entrar
           </button>
         </FormSingIn>
-        <h5>Ou</h5>
+        <h6>Ou</h6>
         <AuthenticationFace />
       </CardForm>
     </Container>

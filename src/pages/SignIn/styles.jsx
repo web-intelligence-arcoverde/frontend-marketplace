@@ -6,18 +6,37 @@ export const Container = styled.div`
   justify-content: space-between;
   background-color: #ec7a5d;
   color: #8b8b8b;
+  @media (max-width: 769px) {
+    flex-direction: column;
+  }
+`;
+export const ColumnLeft = styled.div`
+  color: #fff;
+  width: 45%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 769px) {
+    display: none;
+  }
 `;
 
 export const CardForm = styled.div`
-  width: 55%;
+  width: 60%;
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: px;
+  gap: 15px;
   border-radius: 10% 0 0 10%;
   background-color: #fff;
+  @media (max-width: 769px) {
+    width: 100%;
+    border-radius: 0;
+  }
 `;
 
 export const FormSingIn = styled.form`
@@ -47,11 +66,11 @@ export const FormSingIn = styled.form`
     border: none;
   }
 `;
-export const ColumnLeft = styled.div`
-  color: #fff;
-  width: 45%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const LogoVisble = styled.img`
+  display: none;
+
+  @media (max-width: 769px) {
+    display: block;
+    margin-bottom: 20px;
+  }
 `;
