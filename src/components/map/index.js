@@ -5,13 +5,16 @@ import { useDispatch } from 'react-redux';
 import GoogleMapReact from 'google-map-react';
 
 import Marker from '../marker';
-import './style.css';
+import { AddCoordinate, ContainerMap } from './style';
 
 import { createMarketRequest } from '../../store/modules/market/actions';
 
 function Map({ petshops }) {
   const [positionUser, setPositionUser] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const [addMarket, setAddMarket] = useState(false);
+
   console.log(loading);
 
   const dispatch = useDispatch();
@@ -48,7 +51,7 @@ function Map({ petshops }) {
   }, []);
 
   return (
-    <div className="container-map">
+    <ContainerMap>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
         center={positionUser}
@@ -59,7 +62,10 @@ function Map({ petshops }) {
           <Marker petshop={p} lat={p.location.lat} lng={p.location.lng} />
         ))}
       </GoogleMapReact>
-    </div>
+      <AddCoordinate onClick={() => setAddMarket(!addMarket)}>
+        Add
+      </AddCoordinate>
+    </ContainerMap>
   );
 }
 export default Map;
