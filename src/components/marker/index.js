@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function marker({ petshop }) {
+function Marker() {
   return (
-    <Link to={`/market/${petshop.id}`}>
+    <Link to="/">
       <div
         style={{ width: '20px', height: '20px', backgroundColor: 'black' }}
       />
@@ -11,4 +11,4 @@ function marker({ petshop }) {
   );
 }
 
-export default marker;
+export default Marker;
