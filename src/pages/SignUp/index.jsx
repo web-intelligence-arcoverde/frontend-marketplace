@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCostumer as setStoreCostumer } from '../../store/modules/shop/actions';
-import Header from '../../components/Header';
+import Header from '../../components/organisms/Header';
 import illustration from '../../assets/svg/illustration.svg';
 
 function cadastro() {

@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   setShopMapSelected,
   setMapCenter,
-} from '../../store/modules/shop/actions';
+} from '../../../store/modules/shop/actions';
 
 function Petshop({ petshops }) {
   const dispatch = useDispatch();

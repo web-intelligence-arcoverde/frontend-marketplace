@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Dock } from 'react-dock';
-import Product from '../Product/List';
+import Product from '../ProductList';
 import './style.css';
 
 function Sidebar() {

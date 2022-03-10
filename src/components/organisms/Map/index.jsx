@@ -6,9 +6,9 @@ import { useDispatch } from 'react-redux';
 import GoogleMapReact from 'google-map-react';
 import { AddCoordinate, ContainerMap } from './style';
 
-import { createMarketRequest } from '../../store/modules/market/actions';
+import { createMarketRequest } from '../../../store/modules/market/actions';
 
-import Marker from '../Marker';
+import Marker from '../../molecules/Marker';
 
 function Map({ petshops }) {
   const [positionUser, setPositionUser] = useState({});

@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import React, { useEffect } from 'react';
 import './style.css';
-import Header from '../../components/Header';
-import Petshop from '../../components/Petshop';
-import Map from '../../components/Map';
+import Header from '../../components/organisms/Header';
+import Petshop from '../../components/molecules/MarketCard';
+import Map from '../../components/organisms/Map';
 
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../components/organisms/Sidebar';
 
 import { readMarketRequest } from '../../store/modules/market/actions';
 
