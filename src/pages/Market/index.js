@@ -9,13 +9,11 @@ import Header from '../../components/header';
 import Card from '../../components/product/card';
 import './style.css';
 
-function petshop() {
-  const { id } = useParams(); // Unpacking and retrieve id
+function Market() {
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   const shop = useSelector((state) => state.shop.petshop);
-
-  console.log(shop);
 
   useEffect(() => {
     dispatch(requestPetshop(id));
@@ -55,4 +53,4 @@ function petshop() {
   );
 }
 
-export default petshop;
+export default Market;
