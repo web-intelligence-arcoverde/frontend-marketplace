@@ -10,10 +10,17 @@ export const Authentication = styled.div`
     width: 300px;
     border-radius: 4px;
     border: none;
+    font-size: 17px !important;
+  }
+  .google {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 17px !important;
   }
   img {
     position: relative;
     left: 50px;
-    width: 30px;
+    width: 25px;
   }
 `;
