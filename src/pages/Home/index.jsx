@@ -4,7 +4,7 @@ import AutoComplete from 'react-google-autocomplete';
 
 import { useNavigate } from 'react-router-dom';
 
-import { Container } from '../../components/atoms/Container';
+import { Container } from 'src/components/atoms/Container';
 
 function Search() {
   const navigate = useNavigate();
