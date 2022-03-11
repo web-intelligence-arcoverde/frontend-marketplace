@@ -1,3 +1,4 @@
+
 .product{
   margin-bottom: 50px;
 }
@@ -30,7 +31,8 @@
   margin-bottom: 0;
 }
 .product .ration-img{
-  width: 100%;
+  width: 70%;
+  height: 100%;
   padding: 10px;
 }
  .product small{
