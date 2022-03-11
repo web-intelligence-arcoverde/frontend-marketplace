@@ -24,7 +24,7 @@ function Market() {
       <Header />
       <div className="container ">
         <div className="row">
-          <div className="col-2">
+          <div className="col-3">
             <img src={shop.logo} alt="petlovelogo" />
             <b>{shop.nome}</b>
             <div className="petshop-infos">
@@ -39,7 +39,7 @@ function Market() {
             </div>
             <label className="badge-secondary">Frete gratis</label>
           </div>
-          <div className="col-10">
+          <div className="col-9">
             <h5>Produtos</h5>
             <div className="row">
               {shop.product?.map((p) => (
