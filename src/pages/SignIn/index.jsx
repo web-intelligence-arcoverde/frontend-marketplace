@@ -30,7 +30,7 @@ function SignIn() {
       </ColumnLeft>
       <CardForm>
         <LogoVisble src={Shoping} alt="logo" />
-        <h3>Fazer Login</h3>
+        <h2>Entrar</h2>
         <FormSingIn>
           <input
             type="email"

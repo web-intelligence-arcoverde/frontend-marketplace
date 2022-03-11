@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-import { Authentication } from './styles';
+import { Authentication } from '../AuthenticationFace/styles';
 
 const AuthenticationGoogle = () => {
   const responseGoogle = (response) => {
@@ -16,6 +16,7 @@ const AuthenticationGoogle = () => {
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
           cookiePolicy="single_host_origin"
+          className="google"
         />
       </div>
     </Authentication>

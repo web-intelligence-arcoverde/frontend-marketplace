@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Header from '../../components/header';
-import Product from '../../components/product/list';
+import Product from '../../components/organisms/ProductList';
+import Header from '../../components/organisms/Header';
 import './style.css';
 
-function checkout() {
+function Checkout() {
   const { cart } = useSelector((state) => state.shop);
 
   return (
@@ -136,4 +136,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;
