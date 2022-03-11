@@ -12,6 +12,7 @@ import {
 } from './styles';
 import Shoping from '../../assets/svg/shoping.svg';
 import AuthenticationFace from '../../components/atoms/AuthenticationFace';
+import AuthenticationGoogle from '../../components/atoms/AuthenticationGoogle';
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function SignIn() {
       </ColumnLeft>
       <CardForm>
         <LogoVisble src={Shoping} alt="logo" />
-        <h3>Entrar</h3>
+        <h2>Entrar</h2>
         <FormSingIn>
           <input
             type="email"
@@ -60,6 +61,7 @@ function SignIn() {
         </FormSingIn>
         <h6>Ou</h6>
         <AuthenticationFace />
+        <AuthenticationGoogle />
       </CardForm>
     </Container>
   );
