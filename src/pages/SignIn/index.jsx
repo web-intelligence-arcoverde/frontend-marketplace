@@ -8,11 +8,13 @@ import {
   ColumnLeft,
   Container,
   FormSingIn,
-  LogoVisble,
+  LogoResponsive,
 } from './styles';
 import Shoping from '../../assets/svg/shoping.svg';
 import AuthenticationFace from '../../components/atoms/AuthenticationFace';
 import AuthenticationGoogle from '../../components/atoms/AuthenticationGoogle';
+import Button from '../../components/atoms/Button';
+import Input from '../../components/atoms/Input';
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -29,18 +31,20 @@ function SignIn() {
         <img src={Shoping} alt="logo" />
       </ColumnLeft>
       <CardForm>
-        <LogoVisble src={Shoping} alt="logo" />
+        <LogoResponsive src={Shoping} alt="logo" />
         <h2>Entrar</h2>
         <FormSingIn>
-          <input
+          <Input
             type="email"
-            required
             placeholder="E-mail"
             onChange={(e) => {
-              setCostumer({ ...costumer, email: e.target.value });
+              setCostumer({
+                ...costumer,
+                email: e.target.value,
+              });
             }}
           />
-          <input
+          <Input
             type="password"
             placeholder="Senha"
             onChange={(e) => {
@@ -50,14 +54,7 @@ function SignIn() {
               });
             }}
           />
-          <button
-            type="button"
-            onClick={() => {
-              goToCheckout();
-            }}
-          >
-            Entrar
-          </button>
+          <Button title="Entrar" onClick={goToCheckout} />
         </FormSingIn>
         <h6>Ou</h6>
         <AuthenticationFace />
