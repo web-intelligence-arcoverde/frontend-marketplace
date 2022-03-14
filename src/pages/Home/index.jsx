@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from 'src/components/atoms/Button';
 import AutoComplete from 'react-google-autocomplete';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'src/components/atoms/Container';
-import { Header, CardSearch } from './styles';
+import { Header, CardSearch, Descripton } from './style';
 import Logo from '../../assets/svg/shoping.svg';
 
 function Search() {
@@ -15,12 +16,16 @@ function Search() {
           <img src={Logo} alt="" />
         </div>
         <div>
-          <h1> teste</h1>
+          <Button title="Entrar" onClick={() => navigate('./signin')} />
         </div>
       </Header>
-      <div>
+      <Descripton>
         <h1>Encontre suas necessidades sem qualquer dificuldade</h1>
-      </div>
+        <p>
+          Explore os fornecedores mais bem avaliados e que correspondem
+          exatamente aos seus requisitos
+        </p>
+      </Descripton>
       <CardSearch>
         <AutoComplete
           apiKey="AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo"
@@ -28,10 +33,8 @@ function Search() {
             console.log(place);
           }}
         />
-        <button type="button">Procurar</button>
-        <button type="button" onClick={() => navigate('/marketplace')}>
-          Pular
-        </button>
+        <Button title="Procurar" />
+        <Button title="Pular" onClick={() => navigate('/marketplace')} />
       </CardSearch>
     </Container>
   );
