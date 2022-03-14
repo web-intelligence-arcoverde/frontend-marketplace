@@ -7,7 +7,9 @@ import { requestPetshop } from '../../store/modules/shop/actions';
 
 import Header from '../../components/organisms/Header';
 import Card from '../../components/molecules/ProductCard';
-import './style.css';
+// import './style.css';
+import ProductLogo from '../../components/molecules/ProductLogo';
+import { Container, ContainerRow } from './styled';
 
 function Market() {
   const { id } = useParams();
@@ -20,21 +22,21 @@ function Market() {
   }, []);
 
   return (
-    <div className="h-100">
+    <Container>
       <Header />
-      <div className="container ">
-        <div className="row">
-          <div className="col-9">
-            <h5>Produtos</h5>
-            <div className="row">
+      <div className="contain">
+          <ProductLogo />
+          <div>
+            <ContainerRow>
+              <div className='centralizando'>
               {shop.product?.map((p) => (
                 <Card product={p} key={p.id} />
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
+            </ContainerRow>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
