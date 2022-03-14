@@ -1,39 +1,34 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-// import './style.css';
 
-import { useDispatch , useSelector } from 'react-redux';
-import {toogleCartProduct} from '../../../store/modules/shop/actions'
-import {Product ,PriceAndButton } from './styled'
+import { useDispatch, useSelector } from 'react-redux';
+import { toogleCartProduct } from '../../../store/modules/shop/actions';
+import { Container, ContainerFooter } from './styled';
 
 function card({ product }) {
-  
-  const dispatch = useDispatch();
-  const { cart } = useSelector( (state) => state.shop);
-  const added = cart.findIndex((p) => p._id === product.id) !== -1
+  const { id, capa, nome, preco } = product;
 
-  return( 
-  <Product>
-    <img src={product.capa} alt='product'/>
-    <small>
-      <b>{product.nome}</b>
-    </small>
-    <p>7pcs,priceg</p>
-    <PriceAndButton>
-      <h5>
-        <label className='.badgel'>R$ {product.preco.toFixed(2)}</label>
-      </h5>
-      <button 
-        onClick={()=> 
-        dispatch(toogleCartProduct(product))} 
-        type='button' 
-        className='btn' 
+  const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.shop);
+  const added = cart.findIndex((p) => p._id === id) !== -1;
+
+  return (
+    <Container>
+      <img src={capa} alt="product" />
+      <small>
+        <b>{nome}</b>
+      </small>
+      <ContainerFooter>
+        <h5> R$ {preco.toFixed(2)}</h5>
+        <button
+          onClick={() => dispatch(toogleCartProduct(product))}
+          type="button"
         >
-        {added ? '-' : '+'}
-      </button>
-    </PriceAndButton>
-  </Product>
+          {added ? '-' : '+'}
+        </button>
+      </ContainerFooter>
+    </Container>
   );
 }
 
