@@ -13,6 +13,24 @@ export const Header = styled.div`
     color: ${COLORS.WHITE};
     border-radius: 4px;
   }
+  @media (max-width: 769px) {
+    flex-direction: column-reverse;
+    padding: 10px 20px;
+    align-self: center;
+    margin-top: 10px;
+    img {
+      width: 250px;
+    }
+    Button {
+      width: 290px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const Descripton = styled.div`
@@ -20,13 +38,20 @@ export const Descripton = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 50px 0;
+  margin: 100px 0;
   p {
     width: 60%;
     margin: 30px 0;
     text-align: center;
     align-self: center;
     color: #858282;
+  }
+  @media (max-width: 769px) {
+    width: 90%;
+    margin: 0;
+    p {
+      width: 90%;
+    }
   }
 `;
 
@@ -50,13 +75,27 @@ export const CardSearch = styled.div`
     width: 35%;
     background-color: ${COLORS.PRIMARY_ORANGE};
     color: ${COLORS.WHITE};
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
   }
   > :last-child {
     position: relative;
     right: 21%;
+    @media (max-width: 769px) {
+      right: 0;
+    }
+  }
+  @media (max-width: 769px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    gap: 5px;
+    height: auto;
+    input {
+      padding: 20px;
+      font-size: 20px;
+    }
     Button {
-      border-radius: 4px;
+      width: 100%;
     }
   }
 `;
