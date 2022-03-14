@@ -9,6 +9,8 @@ export const Product = styled.div`
   border: 1px solid #dcdcdc;
   border-radius: 18px;
   margin: 10px 30px;
+  width: 200px;
+  height: 370px;
   img {
     max-height: 210px;
     width: 100%;

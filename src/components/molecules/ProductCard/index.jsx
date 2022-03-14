@@ -21,14 +21,11 @@ function card({ product }) {
     </small>
     <p>7pcs,priceg</p>
     <PriceAndButton>
-      <h5>
-        <label className='.badgel'>R$ {product.preco.toFixed(2)}</label>
-      </h5>
+      <h5> R$ {product.preco.toFixed(2)}</h5>
       <button 
         onClick={()=> 
         dispatch(toogleCartProduct(product))} 
         type='button' 
-        className='btn' 
         >
         {added ? '-' : '+'}
       </button>
