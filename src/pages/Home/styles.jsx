@@ -36,8 +36,7 @@ export const CardSearch = styled.div`
   display: flex;
   align-self: center;
   align-items: center;
-  margin-left: 38%;
-
+  margin-left: 35%;
   input {
     height: 48px;
     width: 100%;
@@ -51,9 +50,13 @@ export const CardSearch = styled.div`
     width: 35%;
     background-color: ${COLORS.PRIMARY_ORANGE};
     color: ${COLORS.WHITE};
+    border-radius: 0 4px 4px 0;
   }
   > :last-child {
     position: relative;
     right: 21%;
+    Button {
+      border-radius: 4px;
+    }
   }
 `;

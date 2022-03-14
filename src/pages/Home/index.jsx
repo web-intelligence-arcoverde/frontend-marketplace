@@ -34,6 +34,7 @@ function Search() {
           }}
         />
         <Button title="Procurar" />
+        <span> </span>
 
         <Button title="Pular" onClick={() => navigate('/marketplace')} />
       </CardSearch>

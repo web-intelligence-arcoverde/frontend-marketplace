@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import COLORS from 'src/common/colors';
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #ec7a5d;
+  background-color: ${COLORS.SALMON};
   color: #8b8b8b;
   @media (max-width: 769px) {
     flex-direction: column;
   }
 `;
 export const ColumnLeft = styled.div`
-  color: #fff;
+  color: ${COLORS.WHITE};
   width: 45%;
   height: 100vh;
   display: flex;
@@ -32,7 +33,7 @@ export const CardForm = styled.div`
   align-items: center;
   gap: 15px;
   border-radius: 10% 0 0 10%;
-  background-color: #fff;
+  background-color: ${COLORS.WHITE};
   @media (max-width: 769px) {
     width: 100%;
     border-radius: 0;
@@ -47,18 +48,18 @@ export const FormSingIn = styled.form`
   align-items: center;
   height: 200px;
   gap: 20px;
-  
+
   //add style component Input
   Input {
     border-radius: 4px;
     :focus {
-      border: 2px solid #fa643d;
+      border: 2px solid ${COLORS.PRIMARY_ORANGE}d;
     }
   }
   //add style component Button
   Button {
-    background-color: #fa643d;
-    color: #fff;
+    background-color: ${COLORS.PRIMARY_ORANGE};
+    color: ${COLORS.WHITE};
     border-radius: 4px;
   }
 `;
