@@ -3,7 +3,7 @@ import Button from 'src/components/atoms/Button';
 import AutoComplete from 'react-google-autocomplete';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'src/components/atoms/Container';
-import { Header, CardSearch, Descripton } from './styles';
+import { Header, CardSearch, Descripton } from './style';
 import Logo from '../../assets/svg/shoping.svg';
 
 function Search() {
