@@ -8,7 +8,7 @@ export const Product = styled.div`
   width: 20%;
   border: 1px solid #dcdcdc;
   border-radius: 18px;
-  margin: 10px 30px;
+  margin: 10px 20px;
   img {
     max-height: 210px;
     width: 100%;
@@ -20,11 +20,7 @@ export const Product = styled.div`
     background: #fa643d;
     color: #fff;
     outline: none;
-  }
-  .badgel {
-    font-family: Roboto;
-    color: #000;
-    border-radius: 4px;
+    border: none;
   }
   .product .ration-img {
     width: 70%;
@@ -45,5 +41,10 @@ export const PriceAndButton = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+
+  h5 {
+    margin-top: 12px;
+    font-family: Roboto;
+    color: #000;
+  }
 `;
