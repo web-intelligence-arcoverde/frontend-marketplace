@@ -47,26 +47,22 @@ export const FormSingIn = styled.form`
   align-items: center;
   height: 200px;
   gap: 20px;
-  input {
-    width: 100%;
-    height: 48px;
-    padding-left: 10px;
-    border: none;
+  
+  //add style component Input
+  Input {
     border-radius: 4px;
     :focus {
       border: 2px solid #fa643d;
     }
   }
-  button {
+  //add style component Button
+  Button {
     background-color: #fa643d;
     color: #fff;
-    width: 100%;
-    height: 48px;
     border-radius: 4px;
-    border: none;
   }
 `;
-export const LogoVisble = styled.img`
+export const LogoResponsive = styled.img`
   display: none;
 
   @media (max-width: 769px) {
