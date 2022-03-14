@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-export const Product = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 16px;
   width: 20%;
   border: 1px solid #dcdcdc;
   border-radius: 18px;
-  margin: 10px 30px;
+  margin: 10px 5px;
   width: 200px;
-  height: 370px;
+  height: 340px;
   img {
-    max-height: 210px;
+    height: 180px;
     width: 100%;
   }
   button {
@@ -22,6 +22,7 @@ export const Product = styled.div`
     background: #fa643d;
     color: #fff;
     outline: none;
+    border: none;
   }
   .badgel {
     font-family: Roboto;
@@ -43,7 +44,7 @@ export const Product = styled.div`
   }
 `;
 
-export const PriceAndButton = styled.div`
+export const ContainerFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

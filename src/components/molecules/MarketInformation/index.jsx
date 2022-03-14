@@ -5,13 +5,15 @@ import { useSelector } from 'react-redux';
 import { Container } from './styled';
 
 function ProductLogo() {
-
   const shop = useSelector((state) => state.shop.petshop);
-  
-  return( 
-  <Container>
-    <div className="col-3">
-  <img src={shop.logo} alt="petlovelogo" />
+
+  return (
+    <Container>
+      <img
+        src={shop.logo}
+        alt="petlovelogo"
+        style={{ width: '200px', height: '200px' }}
+      />
       <b>{shop.nome}</b>
       <div className="petshop-infos">
         <span className="mdi mdi-star" />
@@ -24,8 +26,7 @@ function ProductLogo() {
         <text>2.9km</text>
       </div>
       <label className="badge-secondary">Frete gratis</label>
-    </div>
-  </Container>
+    </Container>
   );
 }
 

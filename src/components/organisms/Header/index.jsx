@@ -24,7 +24,7 @@ function Header({ hideCart }) {
           justifyContent: 'space-between',
         }}
       >
-        <header className="py-4 px-4 text-center">
+        <header>
           <img src={Logo} className="img-fluid" alt="dffsdf" />
         </header>
         {!hideCart && (
