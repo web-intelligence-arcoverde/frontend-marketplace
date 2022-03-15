@@ -18,13 +18,11 @@ function Search() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { positionUser, loading, error } = GetLocation();
+  const { positionUser } = GetLocation();
 
   useEffect(() => {
-    if (!loading && !error) {
-      dispatch(getLocationUser(positionUser));
-    }
-  }, [positionUser]);
+    dispatch(getLocationUser(positionUser));
+  }, []);
 
   return (
     <Container justify="none">
