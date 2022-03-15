@@ -1,33 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Button from 'src/components/atoms/Button';
+import React, { useEffect } from 'react';
 import AutoComplete from 'react-google-autocomplete';
 import { useNavigate } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+
+import GetLocation from 'src/hooks/getLocation';
+import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
-import { Header, CardSearch, Descripton } from './style';
-import Logo from '../../assets/svg/shoping.svg';
+import Logo from 'src/assets/svg/shoping.svg';
+
+import { getLocationUser } from 'src/store/modules/user/actions';
+
+import { Header, Descripton, ContainerSearch } from './style';
 
 function Search() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [positionUser, setPositionUser] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  console.log(positionUser, loading);
+  const { positionUser, loading, error } = GetLocation();
 
   useEffect(() => {
-    const getPositionUser = async () => {
-      await navigator.geolocation.getCurrentPosition(
-        (position) =>
-          setPositionUser({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }),
-        setLoading(false),
-        (err) => console.error(err),
-      );
-    };
-    getPositionUser();
-  }, []);
+    if (!loading && !error) {
+      dispatch(getLocationUser(positionUser));
+    }
+  }, [positionUser]);
 
   return (
     <Container justify="none">
@@ -39,23 +35,48 @@ function Search() {
           <Button title="Entrar" onClick={() => navigate('./signin')} />
         </div>
       </Header>
-      <Descripton>
-        <h1>Encontre suas necessidades sem qualquer dificuldade</h1>
-        <p>
-          Explore os fornecedores mais bem avaliados e que correspondem
-          exatamente aos seus requisitos
-        </p>
-      </Descripton>
-      <CardSearch>
-        <AutoComplete
-          apiKey="AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo"
-          onPlaceSelected={(place) => {
-            console.log(place);
-          }}
-        />
-        <Button title="Procurar" />
-        <Button title="Pular" onClick={() => navigate('/marketplace')} />
-      </CardSearch>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '60%',
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Descripton>
+          <h1>Encontre suas necessidades sem qualquer dificuldade</h1>
+          <p>
+            Explore os fornecedores mais bem avaliados e que correspondem
+            exatamente aos seus requisitos
+          </p>
+        </Descripton>
+        <ContainerSearch>
+          <AutoComplete
+            placeholder="Digite o nome da sua cidade"
+            apiKey="AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo"
+            onPlaceSelected={(place) => {
+              dispatch(
+                getLocationUser({
+                  lat: place.geometry.location.lat(),
+                  lng: place.geometry.location.lng(),
+                }),
+              );
+            }}
+          />
+
+          <div
+            style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}
+          >
+            <Button title="Procurar" />
+
+            <div style={{ marginLeft: '12px' }} />
+
+            <Button title="Pular" onClick={() => navigate('/marketplace')} />
+          </div>
+        </ContainerSearch>
+      </div>
     </Container>
   );
 }
