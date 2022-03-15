@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-
+import { signInRequest } from 'src/store/modules/auth/actions';
 import React, { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
 import {
   CardForm,
   ColumnLeft,
@@ -16,10 +16,23 @@ import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 
 function SignIn() {
-  const [costumer, setCostumer] = useState({
-    email: '',
+  const [form, setForm] = useState({
+    username: '',
     password: '',
   });
+
+  const dispatch = useDispatch();
+  const changeForm = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    console.log(form);
+    dispatch(signInRequest(form));
+    setForm({ username: '', password: '' });
+  };
 
   return (
     <Container>
@@ -29,26 +42,20 @@ function SignIn() {
       <CardForm>
         <LogoResponsive src={Shoping} alt="logo" />
         <h2>Entrar</h2>
-        <FormSingIn>
+        <FormSingIn onSubmit={submitForm}>
           <Input
+            name="username"
             type="email"
             placeholder="E-mail"
-            onChange={(e) => {
-              setCostumer({
-                ...costumer,
-                email: e.target.value,
-              });
-            }}
+            onChange={changeForm}
+            value={form.email}
           />
           <Input
+            name="password"
             type="password"
             placeholder="Senha"
-            onChange={(e) => {
-              setCostumer({
-                ...costumer,
-                password: e.target.value,
-              });
-            }}
+            onChange={changeForm}
+            value={form.password}
           />
           <Button title="Entrar" />
         </FormSingIn>

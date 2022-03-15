@@ -8,7 +8,7 @@ import { signInSuccess, signOutSuccess } from './actions';
 
 export function* signIn({ data }) {
   try {
-    const response = yield call(api.get, '/signin', data);
+    const response = yield call(api.post, '/signin', data);
     const res = response.data;
     yield put(signInSuccess(res));
   } catch (error) {
