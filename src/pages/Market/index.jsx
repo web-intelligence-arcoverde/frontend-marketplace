@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-
-import { requestPetshop } from 'src/store/modules/marketplace/actions';
 
 import Header from 'src/components/organisms/Header';
 
@@ -14,11 +11,7 @@ import { ContainerMarket } from './styled';
 
 function Market() {
   const { id } = useParams();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(requestPetshop(id));
-  }, []);
+  console.log(id);
 
   return (
     <div

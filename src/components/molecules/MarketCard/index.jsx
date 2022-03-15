@@ -3,30 +3,14 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/jsx-curly-brace-presence */
+
 import React from 'react';
 import './style.css';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  setShopMapSelected,
-  setMapCenter,
-} from '../../../store/modules/marketplace/actions';
 
 function Petshop({ petshops }) {
-  const dispatch = useDispatch();
-  const { petshopMapSelected } = useSelector((state) => state.marketplace);
-
-  const setSelectedPetshop = () => {
-    dispatch(setShopMapSelected(petshops._id));
-    dispatch(setMapCenter(petshops.location));
-  };
-
   return (
-    <li
-      className={`petshop d-inline-block ${
-        petshopMapSelected === petshops._id ? 'active' : ''
-      }`}
-      onClick={() => setSelectedPetshop()}
-    >
+    <li className={`petshop d-inline-block`}>
       <div className="d-inline-block">
         <img src={petshops.logo} alt="petlovelogo" className="img-fluid" />
       </div>
