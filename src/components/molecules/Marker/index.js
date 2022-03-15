@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Marker() {
+function Marker({ market }) {
+  const { _id } = market;
+
   return (
-    <Link to="/">
+    <Link to={`/market/${_id}`}>
       <div
         style={{ width: '20px', height: '20px', backgroundColor: 'black' }}
       />

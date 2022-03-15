@@ -1,25 +1,11 @@
-Tudo de tiver petshop ou petshops alterar para a nomenclatura certa
+- ajustar redux de busca de mercados
+- criar um mercado mocado
+- verificar na pagina e componentes se tem algum h-100
+- refatorar header da pagina marketplace
+- retirar css MarketList mudar para styled componentes
+- ajustar sidebar
 
-ajustar redux( nomenclaturas e organizar)
+- criar botao para ir para a cidade/ posi inicial
+  [ no caso vai ter dois redux, um para ir para cidade e outro para ]
 
-pegar location do usuario na home caso ele não repasse pega quando ele usar o autocomplete
-
-revisar fluxo ( basico )
-
-adicionar loading no inicio da pagina até o usuario seder ou recusar a sua localização
-
-ajustar botão para adicionar novo mercado
-
-crir hook para pegar a localização do usuario
-
-criar action no redux para salvar localização do usuario
-
-salvar localização do usuario no localStorage
-
-adicionar footer redirecionando para pagina da web intelligence
-
-- adicionar redux logger
-
-- ajustado hook de location
-
-- ajustar responsividade
+- achar uma logo para quando for adicionar um novo mercado

@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
-import AutoComplete from 'react-google-autocomplete';
-import { useNavigate } from 'react-router-dom';
 
+import AutoComplete from 'react-google-autocomplete';
+
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import { getLocationUser } from 'src/store/modules/user/actions';
+
+import { Container } from 'src/components/atoms/Container';
 import GetLocation from 'src/hooks/getLocation';
 import Button from 'src/components/atoms/Button';
-import { Container } from 'src/components/atoms/Container';
-import Logo from 'src/assets/svg/shoping.svg';
-
-import { getLocationUser } from 'src/store/modules/user/actions';
+import ShoppingLogo from 'src/assets/svg/shoping.svg';
 
 import { Header, Descripton, ContainerSearch } from './style';
 
@@ -29,7 +30,7 @@ function Search() {
     <Container justify="none">
       <Header>
         <div>
-          <img src={Logo} alt="" />
+          <img src={ShoppingLogo} alt="" />
         </div>
         <div>
           <Button title="Entrar" onClick={() => navigate('./signin')} />

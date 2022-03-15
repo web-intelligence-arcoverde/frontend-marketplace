@@ -6,16 +6,25 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 
 import React from 'react';
+
+import { useDispatch } from 'react-redux';
+import { getLocationUser } from 'src/store/modules/user/actions';
+
 import './style.css';
 
-function Petshop({ petshops }) {
+const MarketCard = ({ market }) => {
+  const dispatch = useDispatch();
+
   return (
-    <li className={`petshop d-inline-block`}>
+    <li
+      className={`petshop d-inline-block`}
+      onClick={() => dispatch(getLocationUser(market.location))}
+    >
       <div className="d-inline-block">
-        <img src={petshops.logo} alt="petlovelogo" className="img-fluid" />
+        <img src={market.logo} alt="petlovelogo" className="img-fluid" />
       </div>
       <div className="d-inline-block pl-3 align-bottom">
-        <b>{petshops.nome}</b>
+        <b>{market.nome}</b>
         <div className="petshop-infos">
           <span className="mdi mdi-star" />
           <text>
@@ -30,6 +39,6 @@ function Petshop({ petshops }) {
       </div>
     </li>
   );
-}
+};
 
-export default Petshop;
+export default MarketCard;
