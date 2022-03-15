@@ -6,8 +6,7 @@ import Card from 'src/components/molecules/ProductCard';
 import { Container } from './style';
 
 export default function () {
-  const { product } = useSelector((state) => state.shop.petshop);
-
+  const { product } = useSelector((state) => state.market.data);
   return (
     <Container>
       {product?.map((p) => (

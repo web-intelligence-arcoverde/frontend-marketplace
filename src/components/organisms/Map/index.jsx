@@ -1,24 +1,15 @@
-/* eslint-disable prefer-destructuring */
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import GoogleMapReact from 'google-map-react';
 import { AddCoordinate, ContainerMap } from './style';
 
-import { createMarketRequest } from '../../../store/modules/market/actions';
-
 import Marker from '../../molecules/Marker';
 
-function Map({ petshops }) {
-  const [positionUser, setPositionUser] = useState({});
-  const [loading, setLoading] = useState(true);
+const Map = () => {
+  const { data } = useSelector((state) => state.marketplace);
 
-  const [addMarket, setAddMarket] = useState(false);
-
-  console.log(loading);
-
-  const dispatch = useDispatch();
+  const { location } = useSelector((state) => state.user);
 
   const onClick = (event) => {
     const { lat, lng } = event;
@@ -33,40 +24,27 @@ function Map({ petshops }) {
       },
     };
 
-    dispatch(createMarketRequest(market));
+    console.log(market);
   };
-
-  useEffect(() => {
-    const getPositionUser = async () => {
-      await navigator.geolocation.getCurrentPosition(
-        (position) =>
-          setPositionUser({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }),
-        setLoading(false),
-        (err) => console.error(err),
-      );
-    };
-    getPositionUser();
-  }, []);
 
   return (
     <ContainerMap>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
-        center={positionUser}
-        defaultZoom={15}
+        center={location}
+        defaultZoom={14}
         onClick={onClick}
       >
-        {petshops.map((p) => (
-          <Marker petshop={p} lat={p.location.lat} lng={p.location.lng} />
+        {data.map((point) => (
+          <Marker
+            market={point}
+            lat={point.location.lat}
+            lng={point.location.lng}
+          />
         ))}
       </GoogleMapReact>
-      <AddCoordinate onClick={() => setAddMarket(!addMarket)}>
-        Add
-      </AddCoordinate>
+      <AddCoordinate>Add</AddCoordinate>
     </ContainerMap>
   );
-}
+};
 export default Map;

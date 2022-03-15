@@ -38,12 +38,12 @@ export const Descripton = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 100px 0;
   p {
     width: 60%;
     text-align: center;
     align-self: center;
     color: #858282;
+    margin-top: 10px;
   }
   @media (max-width: 769px) {
     width: 90%;
@@ -54,13 +54,12 @@ export const Descripton = styled.div`
   }
 `;
 
-export const CardSearch = styled.div`
-  width: 80%;
-  height: 100px;
+export const ContainerSearch = styled.div`
   display: flex;
-  align-self: center;
-  align-items: center;
-  margin-left: 35%;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 18px;
+
   input {
     height: 48px;
     width: 100%;
@@ -70,8 +69,10 @@ export const CardSearch = styled.div`
       border: solid 2px ${COLORS.PRIMARY_ORANGE};
     }
   }
+`;
+
+export const Search = styled.div`
   Button {
-    width: 35%;
     background-color: ${COLORS.PRIMARY_ORANGE};
     color: ${COLORS.WHITE};
     border-radius: 4px;

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { requestPetshop } from 'src/store/modules/marketplace/actions';
+import { useDispatch } from 'react-redux';
+import { readMarketRequest } from 'src/store/modules/market/actions';
 
 import Header from 'src/components/organisms/Header';
 
@@ -14,10 +14,11 @@ import { ContainerMarket } from './styled';
 
 function Market() {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  console.log(id);
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(requestPetshop(id));
+    dispatch(readMarketRequest(id));
   }, []);
 
   return (

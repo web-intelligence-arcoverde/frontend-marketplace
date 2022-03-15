@@ -1,13 +1,12 @@
 /* eslint-disable arrow-body-style */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Dock } from 'react-dock';
 import Product from '../ProductList';
 import './style.css';
 
 function Sidebar() {
-  const { cart } = useSelector((state) => state.marketplace);
+  const cart = [];
   const total = cart.reduce((max, product) => {
     return max + product.preco;
   }, 0);

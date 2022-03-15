@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { toogleCartProduct } from '../../../store/modules/marketplace/actions';
 
 import './style.css';
 
 function Product({ product }) {
-  const dispatch = useDispatch();
-
   return (
     <div className="product-list col-12">
       <div className="row">
@@ -26,11 +22,7 @@ function Product({ product }) {
           </small>
         </div>
         <div className="col-3">
-          <button
-            type="button"
-            onClick={() => dispatch(toogleCartProduct(product))}
-            className="btn"
-          >
+          <button type="button" className="btn">
             -
           </button>
         </div>

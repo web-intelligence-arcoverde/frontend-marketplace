@@ -2,20 +2,16 @@
 import { takeLatest, all, call, put } from 'redux-saga/effects';
 import Types from './types';
 import api from '../../../services/api';
-import { setPetshops, setPetshop } from './actions';
 
-export function* requestPetshops() {
-  const response = yield call(api.get, '/petshops');
-  const res = response.data;
-  yield put(setPetshops(res));
-}
-export function* requestPetshop(payload) {
-  const response = yield call(api.get, `/petshops/${payload.id}`);
-  const res = response.data;
-  yield put(setPetshop(res.petshop));
+import { readMarketListSuccess } from './actions';
+
+export function* readMarkplace() {
+  try {
+    const { data } = yield call(api.get, '/petshops');
+    yield put(readMarketListSuccess(data));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export default all([
-  takeLatest(Types.REQUEST_PETSHOPS, requestPetshops),
-  takeLatest(Types.REQUEST_PETSHOP, requestPetshop),
-]);
+export default all([takeLatest(Types.READ_MARKETPLACE_REQUEST, readMarkplace)]);
