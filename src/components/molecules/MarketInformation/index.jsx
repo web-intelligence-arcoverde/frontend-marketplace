@@ -5,23 +5,23 @@ import { useSelector } from 'react-redux';
 import { Container } from './styled';
 
 function ProductLogo() {
-  const shop = useSelector((state) => state.shop.petshop);
+  const { data } = useSelector((state) => state.market);
 
   return (
     <Container>
       <img
-        src={shop.logo}
+        src={data.logo}
         alt="petlovelogo"
         style={{ width: '200px', height: '200px' }}
       />
-      <b>{shop.nome}</b>
+      <b>{data.nome}</b>
       <div className="petshop-infos">
         <span className="mdi mdi-star" />
         <text>
           <b>2,8</b>
         </text>
         <span className="mdi mdi-cash-multiple" />
-        <text>{shop.categoria}</text>
+        <text>{data.categoria}</text>
         <span className="mdi mdi-crosshairs-gps" />
         <text>2.9km</text>
       </div>

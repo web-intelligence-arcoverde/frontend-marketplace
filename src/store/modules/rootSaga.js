@@ -4,6 +4,8 @@ import auth from './auth/sagas';
 
 import marketplace from './marketplace/sagas';
 
+import market from './market/sagas';
+
 export default function* rootSaga() {
-  return yield all({ auth, marketplace });
+  return yield all({ auth, marketplace, market });
 }

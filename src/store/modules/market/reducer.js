@@ -9,29 +9,22 @@ import { produce } from 'immer';
 import Types from './types';
 
 const INITIAL_STATE = {
-  data: [],
+  data: {},
   loading: false,
-  market: {},
 };
 
 function Market(state = INITIAL_STATE, actions) {
   switch (actions.type) {
-    case Types.READ_MARKETS_REQUEST: {
+    case Types.READ_MARKET_REQUEST: {
       return produce(state, (draft) => {
         draft.loading = true;
       });
     }
 
-    case Types.READ_MARKETS_SUCCESS: {
+    case Types.READ_MARKET_SUCCESS: {
       return produce(state, (draft) => {
-        draft.data = actions.data;
         draft.loading = false;
-      });
-    }
-
-    case Types.CREATE_MARKET_SUCCESS: {
-      return produce(state, (draft) => {
-        draft.data = [...state.data, actions.data];
+        draft.data = actions.data;
       });
     }
 

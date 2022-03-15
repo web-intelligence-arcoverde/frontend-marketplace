@@ -8,7 +8,7 @@ import { Container, ContainerFooter } from './styled';
 function card({ product }) {
   const { id, capa, nome, preco } = product;
 
-  const { cart } = useSelector((state) => state.marketplace);
+  const { cart } = useSelector((state) => state.user);
   const added = cart.findIndex((p) => p._id === id) !== -1;
 
   return (

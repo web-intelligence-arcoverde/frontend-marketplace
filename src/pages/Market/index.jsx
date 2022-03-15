@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { readMarketRequest } from 'src/store/modules/market/actions';
 
 import Header from 'src/components/organisms/Header';
 
@@ -12,6 +15,11 @@ import { ContainerMarket } from './styled';
 function Market() {
   const { id } = useParams();
   console.log(id);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(readMarketRequest(id));
+  }, []);
 
   return (
     <div

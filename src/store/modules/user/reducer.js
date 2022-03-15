@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   data: [],
   loading: false,
   location: {},
+  locationMarket: {},
   cart: [],
 };
 
