@@ -41,7 +41,6 @@ export const Descripton = styled.div`
   margin: 100px 0;
   p {
     width: 60%;
-    margin: 30px 0;
     text-align: center;
     align-self: center;
     color: #858282;

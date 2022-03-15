@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import Logo from '../../../assets/svg/logo.svg';
 
 function Header({ hideCart }) {
-  const { cart } = useSelector((state) => state.shop);
+  const { cart } = useSelector((state) => state.marketplace);
 
   const openDrawer = () => {
     const event = new CustomEvent('openCart');

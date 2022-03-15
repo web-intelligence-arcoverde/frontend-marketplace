@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setCostumer as setStoreCostumer } from '../../store/modules/shop/actions';
+
 import {
   CardForm,
   ColumnLeft,
@@ -17,14 +16,11 @@ import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 
 function SignIn() {
-  const dispatch = useDispatch();
   const [costumer, setCostumer] = useState({
     email: '',
     password: '',
   });
-  const goToCheckout = () => {
-    dispatch(setStoreCostumer(costumer));
-  };
+
   return (
     <Container>
       <ColumnLeft>
@@ -54,7 +50,7 @@ function SignIn() {
               });
             }}
           />
-          <Button title="Entrar" onClick={goToCheckout} />
+          <Button title="Entrar" />
         </FormSingIn>
         <h6>Ou</h6>
         <AuthenticationFace />

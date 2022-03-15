@@ -9,11 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   setShopMapSelected,
   setMapCenter,
-} from '../../../store/modules/shop/actions';
+} from '../../../store/modules/marketplace/actions';
 
 function Petshop({ petshops }) {
   const dispatch = useDispatch();
-  const { petshopMapSelected } = useSelector((state) => state.shop);
+  const { petshopMapSelected } = useSelector((state) => state.marketplace);
 
   const setSelectedPetshop = () => {
     dispatch(setShopMapSelected(petshops._id));

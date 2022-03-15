@@ -7,7 +7,7 @@ import Product from '../ProductList';
 import './style.css';
 
 function Sidebar() {
-  const { cart } = useSelector((state) => state.shop);
+  const { cart } = useSelector((state) => state.marketplace);
   const total = cart.reduce((max, product) => {
     return max + product.preco;
   }, 0);

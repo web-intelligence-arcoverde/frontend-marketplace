@@ -3,14 +3,14 @@
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { toogleCartProduct } from '../../../store/modules/shop/actions';
+import { toogleCartProduct } from '../../../store/modules/marketplace/actions';
 import { Container, ContainerFooter } from './styled';
 
 function card({ product }) {
   const { id, capa, nome, preco } = product;
 
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.shop);
+  const { cart } = useSelector((state) => state.marketplace);
   const added = cart.findIndex((p) => p._id === id) !== -1;
 
   return (

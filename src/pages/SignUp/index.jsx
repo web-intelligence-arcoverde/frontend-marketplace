@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCostumer as setStoreCostumer } from '../../store/modules/shop/actions';
+import { setCostumer as setStoreCostumer } from '../../store/modules/marketplace/actions';
 import Header from '../../components/organisms/Header';
 import illustration from '../../assets/svg/illustration.svg';
 
-function cadastro() {
+function SignUp() {
   const dispatch = useDispatch();
   const [costumer, setCostumer] = useState({
     exeternal_id: new Date().getTime().toString(),
@@ -107,4 +107,4 @@ function cadastro() {
   );
 }
 
-export default cadastro;
+export default SignUp;

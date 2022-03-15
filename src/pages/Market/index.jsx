@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { requestPetshop } from 'src/store/modules/shop/actions';
+import { requestPetshop } from 'src/store/modules/marketplace/actions';
 
 import Header from 'src/components/organisms/Header';
 

@@ -1,7 +1,10 @@
 import { all } from 'redux-saga/effects';
-import shop from './shop/sagas';
+
+import auth from './auth/sagas';
+
+import marketplace from './marketplace/sagas';
 import market from './market/sagas';
 
 export default function* rootSaga() {
-  return yield all({ shop, market });
+  return yield all({ auth, marketplace, market });
 }
