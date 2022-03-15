@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'src/components/atoms/Button';
 import AutoComplete from 'react-google-autocomplete';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,26 @@ import Logo from '../../assets/svg/shoping.svg';
 
 function Search() {
   const navigate = useNavigate();
+
+  const [positionUser, setPositionUser] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  console.log(positionUser, loading);
+
+  useEffect(() => {
+    const getPositionUser = async () => {
+      await navigator.geolocation.getCurrentPosition(
+        (position) =>
+          setPositionUser({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }),
+        setLoading(false),
+        (err) => console.error(err),
+      );
+    };
+    getPositionUser();
+  }, []);
 
   return (
     <Container justify="none">

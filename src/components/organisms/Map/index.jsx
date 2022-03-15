@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import GoogleMapReact from 'google-map-react';
@@ -11,12 +11,7 @@ import { createMarketRequest } from '../../../store/modules/market/actions';
 import Marker from '../../molecules/Marker';
 
 function Map({ petshops }) {
-  const [positionUser, setPositionUser] = useState({});
-  const [loading, setLoading] = useState(true);
-
   const [addMarket, setAddMarket] = useState(false);
-
-  console.log(loading);
 
   const dispatch = useDispatch();
 
@@ -36,26 +31,11 @@ function Map({ petshops }) {
     dispatch(createMarketRequest(market));
   };
 
-  useEffect(() => {
-    const getPositionUser = async () => {
-      await navigator.geolocation.getCurrentPosition(
-        (position) =>
-          setPositionUser({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }),
-        setLoading(false),
-        (err) => console.error(err),
-      );
-    };
-    getPositionUser();
-  }, []);
-
   return (
     <ContainerMap>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
-        center={positionUser}
+        center={{ lat: -8.415723, lng: -37.067129 }}
         defaultZoom={15}
         onClick={onClick}
       >
