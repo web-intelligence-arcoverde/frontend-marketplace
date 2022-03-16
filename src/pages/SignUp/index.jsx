@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from 'src/assets/icons/shoping-white.svg';
+import Logo from 'src/assets/icons/shoping.svg';
 import Input from 'src/components/atoms/Input';
 import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
@@ -55,6 +55,7 @@ const SignUp = () => {
             placeholder="Nome"
             onChange={changeForm}
             value={form.username}
+            required
           />
           <Input
             type="email"
@@ -62,13 +63,15 @@ const SignUp = () => {
             placeholder="E-mail"
             onChange={changeForm}
             value={form.email}
+            required
           />
           <Input
-            type="tel"
+            type="number"
             name="tel"
             placeholder="Telefone"
             onChange={changeForm}
             value={form.tel}
+            required
           />
           <Input
             type="password"
@@ -83,6 +86,7 @@ const SignUp = () => {
             placeholder="Confirmar senha"
             onChange={changeForm}
             value={form.confirmPassword}
+            required
           />
 
           <Button title="Cadastrar" />
