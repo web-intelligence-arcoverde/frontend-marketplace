@@ -20,7 +20,7 @@ export default function Marketplace() {
   }, []);
 
   return (
-    <div className="h-100">
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <Header />
       <MarketList />
       <Map />
