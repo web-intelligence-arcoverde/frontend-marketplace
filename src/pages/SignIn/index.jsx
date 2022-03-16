@@ -1,7 +1,16 @@
-// eslint-disable-next-line no-unused-vars
-import { signInRequest } from 'src/store/modules/auth/actions';
 import React, { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
+import { signInRequest } from 'src/store/modules/auth/actions';
+
+import { Icons } from 'src/assets/';
+import AuthenticationFace from 'src/components/atoms/AuthenticationFacebook';
+import AuthenticationGoogle from 'src/components/atoms/AuthenticationGoogle';
+import Button from 'src/components/atoms/Button';
+import Input from 'src/components/atoms/Input';
+
 import {
   CardForm,
   ColumnLeft,
@@ -9,13 +18,12 @@ import {
   FormSingIn,
   LogoResponsive,
 } from './styles';
-import Shoping from '../../assets/svg/shoping.svg';
-import AuthenticationFace from '../../components/atoms/AuthenticationFace';
-import AuthenticationGoogle from '../../components/atoms/AuthenticationGoogle';
-import Button from '../../components/atoms/Button';
-import Input from '../../components/atoms/Input';
+
+const ShoppingIcon = Icons.shopping;
 
 function SignIn() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -29,7 +37,6 @@ function SignIn() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(form);
     dispatch(signInRequest(form));
     setForm({ username: '', password: '' });
   };
@@ -37,10 +44,10 @@ function SignIn() {
   return (
     <Container>
       <ColumnLeft>
-        <img src={Shoping} alt="logo" />
+        <img src={ShoppingIcon} alt="logo" />
       </ColumnLeft>
       <CardForm>
-        <LogoResponsive src={Shoping} alt="logo" />
+        <LogoResponsive src={ShoppingIcon} alt="logo" />
         <h2>Entrar</h2>
         <FormSingIn onSubmit={submitForm}>
           <Input
@@ -58,10 +65,18 @@ function SignIn() {
             value={form.password}
           />
           <Button title="Entrar" />
+
+          <h6>Ou</h6>
+
+          <Button
+            title="Cadastra-se"
+            background="WHITE"
+            onClick={() => navigate('/signup')}
+          />
+
+          <AuthenticationFace />
+          <AuthenticationGoogle />
         </FormSingIn>
-        <h6>Ou</h6>
-        <AuthenticationFace />
-        <AuthenticationGoogle />
       </CardForm>
     </Container>
   );

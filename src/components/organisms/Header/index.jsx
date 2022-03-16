@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import Logo from 'src/assets/svg/shoping.svg';
+import Logo from 'src/assets/icons/shoping.svg';
 
 function Header({ hideCart }) {
   const { cart } = useSelector((state) => state.user);

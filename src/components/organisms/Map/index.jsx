@@ -47,4 +47,5 @@ const Map = () => {
     </ContainerMap>
   );
 };
+
 export default Map;
