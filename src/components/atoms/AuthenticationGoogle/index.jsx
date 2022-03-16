@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-import { Authentication } from '../AuthenticationFace/styles';
+import { Authentication } from '../AuthenticationFacebook/styles';
 
 const AuthenticationGoogle = () => {
   const responseGoogle = (response) => {
