@@ -1,14 +1,15 @@
 /* eslint-disable import/prefer-default-export */
-import { takeLatest, all, call, put } from 'redux-saga/effects';
+import { takeLatest, all, put } from 'redux-saga/effects';
+
+import market from 'src/data/market.json';
+
 import Types from './types';
-import api from '../../../services/api';
 
 import { readMarketListSuccess } from './actions';
 
 export function* readMarkplace() {
   try {
-    const { data } = yield call(api.get, '/petshops');
-    yield put(readMarketListSuccess(data));
+    yield put(readMarketListSuccess(market));
   } catch (error) {
     console.log(error);
   }

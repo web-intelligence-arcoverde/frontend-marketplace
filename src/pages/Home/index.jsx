@@ -6,8 +6,8 @@ import { getLocationUser } from 'src/store/modules/user/actions';
 import { Container } from 'src/components/atoms/Container';
 import GetLocation from 'src/hooks/getLocation';
 import Button from 'src/components/atoms/Button';
-import ShoppingLogo from 'src/assets/svg/shoping.svg';
-import Login from 'src/assets/svg/login.svg';
+import ShoppingLogo from 'src/assets/icons/shoping.svg';
+import Login from 'src/assets/icons/login.svg';
 
 import {
   Header,
@@ -25,9 +25,13 @@ function Search() {
 
   const { positionUser } = GetLocation();
 
+  const isEmptyPositionUser = Object.keys(positionUser).length === 0;
+
   useEffect(() => {
-    dispatch(getLocationUser(positionUser));
-  }, []);
+    if (!isEmptyPositionUser) {
+      dispatch(getLocationUser(positionUser));
+    }
+  }, [positionUser]);
 
   return (
     <Container justify="none">
@@ -37,7 +41,7 @@ function Search() {
         </div>
         <LoginMobile>
           <Button
-            background="TRANSPARENT"
+            background="WHITE"
             img={Login}
             onClick={() => navigate('./signin')}
           />

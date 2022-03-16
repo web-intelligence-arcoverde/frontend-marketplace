@@ -1,7 +1,11 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
-import Facebook from '../../../assets/svg/facebook.svg';
+
+import { Icons } from 'src/assets';
+
 import { Authentication } from './styles';
+
+const Facebook = Icons.facebook;
 
 const AuthenticationFace = () => {
   const componentClicked = () => {
@@ -18,12 +22,12 @@ const AuthenticationFace = () => {
       <div>
         <FacebookLogin
           appId="1088597931155576"
-          autoLoad="true"
+          autoLoad={false}
           fields="name,email,picture"
           onClick={componentClicked}
           callback={responseFacebook}
           cssClass="my-facebook-button-class"
-          textButton="Entrar com o Facebook"
+          textButton="Entrar com o facebook"
         />
       </div>
     </Authentication>
