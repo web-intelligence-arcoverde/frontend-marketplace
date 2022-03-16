@@ -66,7 +66,7 @@ const SignUp = () => {
             required
           />
           <Input
-            type="number"
+            type="tel"
             name="tel"
             placeholder="Telefone"
             onChange={changeForm}
