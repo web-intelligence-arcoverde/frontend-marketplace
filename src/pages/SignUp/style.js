@@ -47,5 +47,7 @@ export const Info = styled.div`
     h4 {
       display: none;
     }
-  }
+    img{
+      width: 100px;
+    }
 `;
