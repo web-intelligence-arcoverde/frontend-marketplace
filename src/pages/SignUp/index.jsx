@@ -3,7 +3,7 @@ import Logo from 'src/assets/icons/shoping-white.svg';
 import Input from 'src/components/atoms/Input';
 import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
-import { Register } from './style';
+import { Info, Register } from './style';
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -38,20 +38,15 @@ const SignUp = () => {
       -90deg
       ,#fa643d 0%,#e5a595 100%)"
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          color: '#fff',
-          alignItems: 'center',
-          gap: '15px',
-        }}
-      >
-        <img src={Logo} alt="" width="100px" />
+      <Info>
+        <img src={Logo} alt="" />
         <h2>Junte-se a nós</h2>
-        <h4>Seja um inscrito e receba todas as nossas ofertas</h4>
-      </div>
+        <h4>
+          Cadastre-se e seja um colaborador e receba todas as nossas ofertas
+        </h4>
+      </Info>
       <Register>
+        <h1>Registre-se</h1>
         <form onSubmit={submitForm}>
           <Input
             type="text"
