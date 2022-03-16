@@ -1,18 +1,23 @@
 import React, { useEffect } from 'react';
-
 import AutoComplete from 'react-google-autocomplete';
-
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import { getLocationUser } from 'src/store/modules/user/actions';
-
 import { Container } from 'src/components/atoms/Container';
 import GetLocation from 'src/hooks/getLocation';
 import Button from 'src/components/atoms/Button';
 import ShoppingLogo from 'src/assets/svg/shoping.svg';
+import Login from 'src/assets/svg/login.svg';
 
-import { Header, Descripton, ContainerSearch } from './style';
+import {
+  Header,
+  Descripton,
+  ContainerSearch,
+  Card,
+  CardButton,
+  LoginMobile,
+  LoginDesktop,
+} from './styles';
 
 function Search() {
   const navigate = useNavigate();
@@ -30,20 +35,18 @@ function Search() {
         <div>
           <img src={ShoppingLogo} alt="" />
         </div>
-        <div>
+        <LoginMobile>
+          <Button
+            background="TRANSPARENT"
+            img={Login}
+            onClick={() => navigate('./signin')}
+          />
+        </LoginMobile>
+        <LoginDesktop>
           <Button title="Entrar" onClick={() => navigate('./signin')} />
-        </div>
+        </LoginDesktop>
       </Header>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '60%',
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <Card>
         <Descripton>
           <h1>Encontre suas necessidades sem qualquer dificuldade</h1>
           <p>
@@ -64,18 +67,17 @@ function Search() {
               );
             }}
           />
-
-          <div
-            style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}
-          >
+          <CardButton>
             <Button title="Procurar" />
-
-            <div style={{ marginLeft: '12px' }} />
-
-            <Button title="Pular" onClick={() => navigate('/marketplace')} />
-          </div>
+            <Button
+              background="GRAY"
+              color="BLACK"
+              title="Pular"
+              onClick={() => navigate('/marketplace')}
+            />
+          </CardButton>
         </ContainerSearch>
-      </div>
+      </Card>
     </Container>
   );
 }

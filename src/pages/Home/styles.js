@@ -9,27 +9,30 @@ export const Header = styled.div`
   padding: 30px 60px;
   Button {
     width: 150px;
-    background-color: ${COLORS.PRIMARY_ORANGE};
-    color: ${COLORS.WHITE};
     border-radius: 4px;
   }
   @media (max-width: 769px) {
-    flex-direction: column-reverse;
-    padding: 10px 20px;
-    align-self: center;
-    margin-top: 10px;
+    justify-content: center;
     img {
-      width: 250px;
+      width: 150px;
     }
-    Button {
-      width: 290px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        display: none;
-      }
+  }
+`;
+export const LoginMobile = styled.div`
+  display: none;
+  @media (max-width: 769px) {
+    display: block;
+    position: absolute;
+    left: 70%;
+    top: 3%;
+    img {
+      width: 40px;
     }
+  }
+`;
+export const LoginDesktop = styled.div`
+  @media (max-width: 769px) {
+    display: none;
   }
 `;
 
@@ -53,11 +56,21 @@ export const Descripton = styled.div`
     }
   }
 `;
+export const CardButton = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  @media (max-width: 769px) {
+    flex-direction: column;
+    gap: 5px;
+  }
+`;
 
 export const ContainerSearch = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   margin-top: 18px;
 
   input {
@@ -69,6 +82,9 @@ export const ContainerSearch = styled.div`
       border: solid 2px ${COLORS.PRIMARY_ORANGE};
     }
   }
+  @media (max-width: 769px) {
+    width: 90%;
+  }
 `;
 
 export const Search = styled.div`
@@ -77,25 +93,27 @@ export const Search = styled.div`
     color: ${COLORS.WHITE};
     border-radius: 4px;
   }
-  > :last-child {
-    position: relative;
-    right: 21%;
-    @media (max-width: 769px) {
-      right: 0;
-    }
-  }
+
   @media (max-width: 769px) {
     flex-direction: column;
     align-items: center;
     margin: 0;
     gap: 5px;
     height: auto;
+  }
+`;
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 60%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 769px) {
     input {
-      padding: 20px;
-      font-size: 20px;
-    }
-    Button {
-      width: 100%;
+      padding-left: 50px;
     }
   }
 `;

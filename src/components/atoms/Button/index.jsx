@@ -1,9 +1,10 @@
 import React from 'react';
-import { CardButton } from './styles';
 
-const Button = ({ title, onClick, img }) => {
+import { CardButton } from './style';
+
+const Button = ({ title, onClick, img, background, color }) => {
   return (
-    <CardButton>
+    <CardButton background={background} color={color}>
       <button type="submit" onClick={onClick}>
         <img src={img} alt="" />
         {title}
