@@ -33,6 +33,7 @@ const SignUp = () => {
   return (
     <Container
       direction
+      responsive
       justify="space-evenly"
       background="linear-gradient(
       -90deg
@@ -42,7 +43,7 @@ const SignUp = () => {
         <img src={Logo} alt="" />
         <h2>Junte-se a nós</h2>
         <h4>
-          Cadastre-se e seja um colaborador e receba todas as nossas ofertas
+          Cadastre-se , seja um colaborador e receba todas as nossas ofertas
         </h4>
       </Info>
       <Register>

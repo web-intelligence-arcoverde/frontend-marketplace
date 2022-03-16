@@ -8,4 +8,8 @@ export const Container = styled.div`
   height: 100vh;
   background: ${(props) =>
     props.background ? props.background : 'transparent'};
+
+  @media (max-width: 769px) {
+    flex-direction: ${({ responsive }) => (responsive ? 'column' : 'row')};
+  }
 `;

@@ -29,6 +29,9 @@ export const Register = styled.form`
       margin: 5px 0;
     }
   }
+  @media (max-width: 769px) {
+    width: 90%;
+  }
 `;
 
 export const Info = styled.div`
@@ -39,4 +42,10 @@ export const Info = styled.div`
   align-items: center;
   gap: 15px;
   text-align: center;
+  @media (max-width: 769px) {
+    h2,
+    h4 {
+      display: none;
+    }
+  }
 `;
