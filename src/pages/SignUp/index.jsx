@@ -1,54 +1,98 @@
 import React, { useState } from 'react';
-
-import { signUpRequest } from 'src/store/modules/auth/actions';
-import { useDispatch } from 'react-redux';
-
+import Logo from 'src/assets/icons/shoping-white.svg';
 import Input from 'src/components/atoms/Input';
 import Button from 'src/components/atoms/Button';
+import { Container } from 'src/components/atoms/Container';
+import { Register } from './style';
 
 const SignUp = () => {
-  const [costumer, setCostumer] = useState({
-    name: '',
-    type: 'individual',
+  const [form, setForm] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    tel: '',
   });
 
-  const dispatch = useDispatch();
+  const changeForm = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
-  const signUp = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    dispatch(signUpRequest(costumer));
+    setForm({
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      tel: '',
+    });
   };
 
   return (
-    <div className="container-fluid h-100">
-      <form onSubmit={signUp}>
-        <Input
-          type="text"
-          placeholder="NOME COMPLETO"
-          onChange={(e) => {
-            setCostumer({ ...costumer, name: e.target.value });
-          }}
-        />
-        <Input
-          type="text"
-          className="form-control form-control-lg mb-3"
-          placeholder="E-mail"
-          onChange={(e) => {
-            setCostumer({ ...costumer, email: e.target.value });
-          }}
-        />
-        <Input
-          type="text"
-          className="form-control form-control-lg mb-3"
-          placeholder="Telefone"
-          onChange={(e) => {
-            setCostumer({ ...costumer, phone_numbers: [e.target.value] });
-          }}
-        />
+    <Container
+      direction
+      justify="space-evenly"
+      background="linear-gradient(
+      -90deg
+      ,#fa643d 0%,#e5a595 100%)"
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          color: '#fff',
+          alignItems: 'center',
+          gap: '15px',
+        }}
+      >
+        <img src={Logo} alt="" width="100px" />
+        <h2>Junte-se a nós</h2>
+        <h4>Seja um inscrito e receba todas as nossas ofertas</h4>
+      </div>
+      <Register>
+        <form onSubmit={submitForm}>
+          <Input
+            type="text"
+            name="username"
+            placeholder="Nome"
+            onChange={changeForm}
+            value={form.username}
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            onChange={changeForm}
+            value={form.email}
+          />
+          <Input
+            type="tel"
+            name="tel"
+            placeholder="Telefone"
+            onChange={changeForm}
+            value={form.tel}
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            onChange={changeForm}
+            value={form.password}
+          />
+          <Input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirmar senha"
+            onChange={changeForm}
+            value={form.confirmPassword}
+          />
 
-        <Button type="submit">Finalizar pedido</Button>
-      </form>
-    </div>
+          <Button title="Cadastrar" />
+        </form>
+      </Register>
+    </Container>
   );
 };
 

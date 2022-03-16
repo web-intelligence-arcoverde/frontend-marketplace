@@ -6,4 +6,6 @@ export const Container = styled.div`
   justify-content: ${(props) => (props.justify ? props.justify : 'center')};
   align-items: ${(props) => (props.align ? props.align : 'center')};
   height: 100vh;
+  background: ${(props) =>
+    props.background ? props.background : 'transparent'};
 `;
