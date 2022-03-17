@@ -1,35 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Icons } from 'src/assets';
-import Input from 'src/components/atoms/Input';
-import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
-import { Info, Register } from './style';
+import MultiFormStep from 'src/components/molecules/MultiFormStep';
+import { Info } from './style';
 
 const SignUp = () => {
-  const [form, setForm] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    tel: '',
-  });
-
-  const changeForm = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const submitForm = (e) => {
-    e.preventDefault();
-    setForm({
-      username: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      tel: '',
-    });
-  };
-
   return (
     <Container
       direction
@@ -46,52 +21,9 @@ const SignUp = () => {
           Cadastre-se , seja um colaborador e receba todas as nossas ofertas
         </h4>
       </Info>
-      <Register>
-        <h1>Registre-se</h1>
-        <form onSubmit={submitForm}>
-          <Input
-            type="text"
-            name="username"
-            placeholder="Nome"
-            onChange={changeForm}
-            value={form.username}
-            required
-          />
-          <Input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-            onChange={changeForm}
-            value={form.email}
-            required
-          />
-          <Input
-            type="tel"
-            name="tel"
-            placeholder="Telefone"
-            onChange={changeForm}
-            value={form.tel}
-            required
-          />
-          <Input
-            type="password"
-            name="password"
-            placeholder="Senha"
-            onChange={changeForm}
-            value={form.password}
-          />
-          <Input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirmar senha"
-            onChange={changeForm}
-            value={form.confirmPassword}
-            required
-          />
-
-          <Button title="Cadastrar" />
-        </form>
-      </Register>
+      <div style={{ width: '50%' }}>
+        <MultiFormStep />
+      </div>
     </Container>
   );
 };
