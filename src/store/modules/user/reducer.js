@@ -2,7 +2,7 @@ import { produce } from 'immer';
 import Types from './types';
 
 const INITIAL_STATE = {
-  data: [],
+  data: {},
   loading: false,
   location: {},
   locationMarket: {},
