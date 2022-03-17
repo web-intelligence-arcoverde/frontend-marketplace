@@ -8,7 +8,6 @@ const AddressForm = () => {
     rua: '',
     cidade: '',
     bairro: '',
-    referencia: '',
   });
 
   const changeForm = (e) => {
@@ -24,12 +23,11 @@ const AddressForm = () => {
       rua: '',
       cidade: '',
       bairro: '',
-      referencia: '',
     });
   };
   return (
     <div style={{ width: '100%' }}>
-      <h1>Registre-se</h1>
+      <h1>Endereço</h1>
       <form onSubmit={submitForm}>
         <Input
           type="text"
@@ -40,7 +38,7 @@ const AddressForm = () => {
           required
         />
         <Input
-          type="number"
+          type="cep"
           name="cep"
           placeholder="Cep"
           onChange={changeForm}
@@ -68,14 +66,6 @@ const AddressForm = () => {
           placeholder="Bairro"
           onChange={changeForm}
           value={form.bairro}
-          required
-        />
-        <Input
-          type="text"
-          name="referencia"
-          placeholder="Digite um ponto de referência"
-          onChange={changeForm}
-          value={form.referencia}
           required
         />
       </form>

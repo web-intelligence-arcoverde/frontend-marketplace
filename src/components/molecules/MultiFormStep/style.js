@@ -20,11 +20,10 @@ export const CardForm = styled.div`
   form {
     padding: 50px;
     Button {
-      margin-top: 40px;
       font-weight: 700;
     }
     Input {
-      margin: 5px 0;
+      margin: 6px 0;
     }
   }
   @media (max-width: 769px) {
