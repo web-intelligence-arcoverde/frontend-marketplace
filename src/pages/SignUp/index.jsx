@@ -9,7 +9,6 @@ const SignUp = () => {
     <Container
       direction
       responsive
-      justify="space-evenly"
       background="linear-gradient(
       -90deg
       ,#fa643d 0%,#e5a595 100%)"
@@ -21,9 +20,7 @@ const SignUp = () => {
           Cadastre-se , seja um colaborador e receba todas as nossas ofertas
         </h4>
       </Info>
-      <div style={{ width: '50%' }}>
-        <MultiFormStep />
-      </div>
+      <MultiFormStep />
     </Container>
   );
 };

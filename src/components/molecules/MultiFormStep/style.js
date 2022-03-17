@@ -4,7 +4,7 @@ import COLORS from 'src/common/colors';
 export const CardForm = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 40%;
   align-items: center;
   background-color: ${COLORS.WHITE};
   border-radius: 5%;
@@ -27,6 +27,7 @@ export const CardForm = styled.div`
     }
   }
   @media (max-width: 769px) {
+    margin-top: 30px;
     width: 90%;
   }
 `;
