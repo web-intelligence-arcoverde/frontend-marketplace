@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from 'src/assets/icons/shoping.svg';
+import Logo from 'src/assets/icons/shopping.svg';
 import Input from 'src/components/atoms/Input';
 import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
