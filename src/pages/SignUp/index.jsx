@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from 'src/assets/icons/shoping.svg';
+import { Icons } from 'src/assets';
 import Input from 'src/components/atoms/Input';
 import Button from 'src/components/atoms/Button';
 import { Container } from 'src/components/atoms/Container';
@@ -40,7 +40,7 @@ const SignUp = () => {
       ,#fa643d 0%,#e5a595 100%)"
     >
       <Info>
-        <img src={Logo} alt="" />
+        <img src={Icons.shopping} alt="" />
         <h2>Junte-se a nós</h2>
         <h4>
           Cadastre-se , seja um colaborador e receba todas as nossas ofertas
