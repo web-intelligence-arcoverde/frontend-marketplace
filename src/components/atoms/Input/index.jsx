@@ -1,7 +1,16 @@
 import React from 'react';
 import { CardInput } from './styles';
 
-const Input = ({ name, type, onChange, placeholder, img }) => {
+const Input = ({ name, type, onChange, placeholder, img, required, value }) => {
+  const Masks = {
+    tel: () => {
+      return value
+        ?.replace(/\D/g, '')
+        ?.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')
+        .substring(0, 15);
+    },
+  };
+
   return (
     <CardInput>
       <img src={img} alt="" />
@@ -10,6 +19,8 @@ const Input = ({ name, type, onChange, placeholder, img }) => {
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        required={required}
+        value={Masks?.[name]?.() || value}
       />
     </CardInput>
   );
