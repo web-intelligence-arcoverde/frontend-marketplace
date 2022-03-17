@@ -6,7 +6,7 @@ import { getLocationUser } from 'src/store/modules/user/actions';
 import { Container } from 'src/components/atoms/Container';
 import GetLocation from 'src/hooks/getLocation';
 import Button from 'src/components/atoms/Button';
-import ShoppingLogo from 'src/assets/icons/shoping.svg';
+import { Icons } from 'src/assets';
 import Login from 'src/assets/icons/login.svg';
 
 import {
@@ -37,7 +37,7 @@ function Search() {
     <Container justify="none">
       <Header>
         <div>
-          <img src={ShoppingLogo} alt="" />
+          <img src={Icons.shopping} alt="" />
         </div>
         <LoginMobile>
           <Button

@@ -9,9 +9,9 @@ const MarketList = () => {
   const { data } = useSelector((state) => state.marketplace);
 
   return (
-    <div>
+    <div style={{ marginTop: '20px' }}>
       <div style={{ textAlign: 'center' }}>
-        <h4>Os mercados proximos de voce</h4>
+        <h4>Os mercados proximos de você</h4>
       </div>
       <ul className="market-list">
         {data.map((market) => (

@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import GoogleMapReact from 'google-map-react';
+import { Icons } from 'src/assets';
+
 import Marker from '../../molecules/Marker';
 
-import { AddCoordinate, ContainerMap } from './style';
+import { ContainerButton, Container, TopContainerButton } from './style';
 
 const Map = () => {
   const { data } = useSelector((state) => state.marketplace);
-
   const { location } = useSelector((state) => state.user);
+
+  const user = useSelector((state) => state.user.data);
 
   const [addNewMarket, setAddNewMarket] = useState(false);
 
@@ -30,12 +33,13 @@ const Map = () => {
   };
 
   return (
-    <ContainerMap>
+    <Container>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDENO7FZ4l8DJd3-veJU1coSCBZzOp6TNo' }}
         center={location}
         defaultZoom={14}
         onClick={onClick}
+        options={{ fullscreenControl: false }}
       >
         {data.map((point) => (
           <Marker
@@ -45,10 +49,16 @@ const Map = () => {
           />
         ))}
       </GoogleMapReact>
-      <AddCoordinate onClick={() => setAddNewMarket(!addNewMarket)}>
-        Add
-      </AddCoordinate>
-    </ContainerMap>
+      <TopContainerButton>
+        <img src={Icons.location} alt="add" />
+      </TopContainerButton>
+
+      {user?.role && (
+        <ContainerButton onClick={() => setAddNewMarket(!addNewMarket)}>
+          <img src={Icons.location} alt="add" />
+        </ContainerButton>
+      )}
+    </Container>
   );
 };
 

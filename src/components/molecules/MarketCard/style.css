@@ -1,17 +1,16 @@
 .petshop {
   list-style: none;
   padding: 7px;
-  margin-right: 20px;
   border-radius: 5px;
   border-bottom: 3px solid transparent;
   transition: 0.5s;
 }
-.petshop.active , 
-.petshop:hover  {
-   cursor: pointer;
-   border-bottom: 3px solid var(--primary);
-   transition: 0.5s;
-   background-color: #f6f5f5;
+.petshop.active,
+.petshop:hover {
+  cursor: pointer;
+  border-bottom: 3px solid var(--secondary);
+  transition: 0.5s;
+  background-color: #f6f5f5;
 }
 
 .petshop img {
@@ -22,13 +21,13 @@
 .petshop b {
   margin-bottom: 0;
 }
-.petshop .pl-3{
+.petshop .pl-3 {
   padding-left: 3px;
-  margin-left:10px ;
+  margin-left: 10px;
 }
 .petshop-infos span {
- vertical-align: middle;
- color: #626264;
+  vertical-align: middle;
+  color: #626264;
 }
 .petshop-infos span.mdi-star {
   color: #facd5d;
@@ -36,12 +35,12 @@
 .petshop-infos text {
   font-size: 13px;
   margin-right: 10px;
-  vertical-align: middle ;
-  color: #626264 ;
+  vertical-align: middle;
+  color: #626264;
 }
-.badge-secondary{
-  color: #503E9D;
-  background: #503E9D10;
+.badge-secondary {
+  color: #503e9d;
+  background: #503e9d10;
   padding: 4px 8px;
   border-radius: 4px;
 }

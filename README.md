@@ -1,1 +1,2 @@
-- ajustar fluxo das paginas
+- header com icon do carrinho & usuario
+- adicionar search de cidade no mapa

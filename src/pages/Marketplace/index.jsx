@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { readMarketListRequest } from 'src/store/modules/marketplace/actions';
 
@@ -11,9 +11,6 @@ import './style.css';
 
 export default function Marketplace() {
   const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state);
-
-  console.log(data, loading);
 
   useEffect(() => {
     dispatch(readMarketListRequest());

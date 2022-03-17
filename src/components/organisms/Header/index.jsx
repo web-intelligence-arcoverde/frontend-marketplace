@@ -1,17 +1,31 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-
-import Button from 'src/components/atoms/Button';
+import { useNavigate } from 'react-router-dom';
 
 import { Icons } from 'src/assets';
 
-function Header({ hideCart }) {
+import Button from 'src/components/atoms/Button';
+
+const Header = ({ hideCart }) => {
   const { cart } = useSelector((state) => state.user);
+  const { token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  console.log(token);
 
   const openDrawer = () => {
     const event = new CustomEvent('openCart');
     window.dispatchEvent(event);
+  };
+
+  const goToRouter = () => {
+    if (!token) {
+      navigate('/signin');
+    } else {
+      console.log(
+        'criar um sidebar ou uma pagina com as infromações do usuario',
+      );
+    }
   };
 
   return (
@@ -40,7 +54,7 @@ function Header({ hideCart }) {
           <Button
             type="button"
             onClick={openDrawer}
-            img={Icons.location}
+            img={Icons.cart}
             background="WHITE"
           >
             {cart.length} items
@@ -49,14 +63,14 @@ function Header({ hideCart }) {
 
         <Button
           type="button"
-          onClick={openDrawer}
-          img={Icons.location}
+          img={Icons.user}
           background="WHITE"
           color="BLACK"
+          onClick={goToRouter}
         />
       </div>
     </header>
   );
-}
+};
 
 export default Header;
