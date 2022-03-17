@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardInput } from './styles';
+import { CardInput } from './style';
 
 const Input = ({ name, type, onChange, placeholder, img, required, value }) => {
   const Masks = {
