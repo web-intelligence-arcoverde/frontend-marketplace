@@ -34,9 +34,17 @@ export const CardForm = styled.div`
   gap: 15px;
   border-radius: 10% 0 0 10%;
   background-color: ${COLORS.WHITE};
+  h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
   @media (max-width: 769px) {
     width: 100%;
     border-radius: 0;
+    height: 70vh;
+    h1 {
+      font-size: 26px;
+    }
   }
 `;
 
@@ -48,6 +56,10 @@ export const FormSingIn = styled.form`
   align-items: center;
   height: 200px;
   gap: 20px;
+
+  @media (max-width: 769px) {
+    width: 90%;
+  }
 
   //add style component Input
   Input {
@@ -69,5 +81,6 @@ export const LogoResponsive = styled.img`
   @media (max-width: 769px) {
     display: block;
     margin-bottom: 20px;
+    width: 170px;
   }
 `;

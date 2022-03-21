@@ -17,9 +17,7 @@ import {
   Container,
   FormSingIn,
   LogoResponsive,
-} from './styles';
-
-const ShoppingIcon = Icons.shopping;
+} from './style';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -44,11 +42,11 @@ function SignIn() {
   return (
     <Container>
       <ColumnLeft>
-        <img src={ShoppingIcon} alt="logo" />
+        <img src={Icons.shopping} alt="logo" />
       </ColumnLeft>
       <CardForm>
-        <LogoResponsive src={ShoppingIcon} alt="logo" />
-        <h2>Entrar</h2>
+        <LogoResponsive src={Icons.shopping} alt="logo" />
+        <h1>Entrar</h1>
         <FormSingIn onSubmit={submitForm}>
           <Input
             name="username"

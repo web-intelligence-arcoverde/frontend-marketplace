@@ -22,9 +22,12 @@ export const LoginMobile = styled.div`
   display: none;
   @media (max-width: 769px) {
     display: block;
-    position: absolute;
-    left: 70%;
+    position: fixed;
+    right: 4%;
     top: 3%;
+    Button {
+      width: auto;
+    }
     img {
       width: 40px;
     }
@@ -41,12 +44,17 @@ export const Descripton = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
   p {
     width: 60%;
     text-align: center;
     align-self: center;
     color: #858282;
-    margin-top: 10px;
+    margin: 20px 0;
+    font-size: 17px;
   }
   @media (max-width: 769px) {
     width: 90%;
