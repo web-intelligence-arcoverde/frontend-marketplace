@@ -14,7 +14,6 @@ import {
   Descripton,
   ContainerSearch,
   Card,
-  CardButton,
   LoginMobile,
   LoginDesktop,
 } from './styles';
@@ -71,15 +70,8 @@ function Search() {
               );
             }}
           />
-          <CardButton>
-            <Button title="Procurar" />
-            <Button
-              background="GRAY"
-              color="BLACK"
-              title="Pular"
-              onClick={() => navigate('/marketplace')}
-            />
-          </CardButton>
+          <div style={{ marginTop: '18px' }} />
+          <Button title="Procurar" onClick={() => navigate('./marketplace')} />
         </ContainerSearch>
       </Card>
     </Container>
