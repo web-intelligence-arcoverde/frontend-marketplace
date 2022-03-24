@@ -8,6 +8,7 @@ import GetLocation from 'src/hooks/getLocation';
 import Button from 'src/components/atoms/Button';
 import { Icons } from 'src/assets';
 import Login from 'src/assets/icons/login.svg';
+import Footer from 'src/components/organisms/Footer'
 
 import {
   Header,
@@ -82,6 +83,7 @@ function Search() {
           </CardButton>
         </ContainerSearch>
       </Card>
+      <Footer/>
     </Container>
   );
 }
