@@ -1,2 +1,2 @@
-- header com icon do carrinho & usuario
-- adicionar search de cidade no mapa
+- removido button pular da home
+- fazer merges local
