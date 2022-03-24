@@ -10,34 +10,33 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { getLocationUser } from 'src/store/modules/user/actions';
 
-import './style.css';
+import { Text, CardInfos, Container } from './style';
 
 const MarketCard = ({ market }) => {
   const dispatch = useDispatch();
 
   return (
-    <li
-      className={`petshop d-inline-block`}
+    <Container
       onClick={() => dispatch(getLocationUser(market.location))}
     >
-      <div className="d-inline-block">
+      <div>
         <img src={market.logo} alt="petlovelogo" className="img-fluid" />
       </div>
-      <div className="d-inline-block pl-3 align-bottom">
+      <CardInfos>
         <b>{market.nome}</b>
-        <div className="petshop-infos">
+        <div>
           <span className="mdi mdi-star" />
-          <text>
+          <Text>
             <b>2,8</b>
-          </text>
+          </Text>
           <span className="mdi mdi-cash-multiple" />
-          <text>$$$</text>
+          <Text>$$$</Text>
           <span className="mdi mdi-crosshairs-gps" />
-          <text>2.9km</text>
+          <Text>2.9km</Text>
         </div>
         <label className="badge-secondary">Frete gratis</label>
-      </div>
-    </li>
+      </CardInfos>
+    </Container>
   );
 };
 

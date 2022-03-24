@@ -19,8 +19,8 @@ export default function Marketplace() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <Header />
-      <MarketList />
       <Map />
+      <MarketList />
     </div>
   );
 }
