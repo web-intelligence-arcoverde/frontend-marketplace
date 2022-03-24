@@ -72,13 +72,7 @@ function Search() {
             }}
           />
           <CardButton>
-            <Button title="Procurar" />
-            <Button
-              background="GRAY"
-              color="BLACK"
-              title="Pular"
-              onClick={() => navigate('/marketplace')}
-            />
+            <Button title="Procurar" onClick={() => navigate('/marketplace')} />
           </CardButton>
         </ContainerSearch>
       </Card>
