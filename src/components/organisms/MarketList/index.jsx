@@ -10,7 +10,6 @@ const MarketList = () => {
 
   return (
     <Container>
-  
       <ul className="market-list">
         {data.map((market) => (
           <MarketCard market={market} />

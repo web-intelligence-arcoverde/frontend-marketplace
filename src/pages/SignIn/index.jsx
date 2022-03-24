@@ -68,11 +68,7 @@ function SignIn() {
 
           <h6>Ou</h6>
 
-          <Button
-            title="Cadastra-se"
-            background="WHITE"
-            onClick={() => navigate('/signup')}
-          />
+          <Button title="Cadastra-se" onClick={() => navigate('/signup')} />
 
           <AuthenticationFace />
           <AuthenticationGoogle />
