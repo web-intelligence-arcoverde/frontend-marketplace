@@ -4,7 +4,7 @@ import COLORS from 'src/common/colors';
 export const CardForm = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 35%;
   align-items: center;
   background-color: ${COLORS.WHITE};
   border-radius: 5%;
@@ -14,21 +14,23 @@ export const CardForm = styled.div`
     display: flex;
     align-self: center;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 50px;
     color: ${COLORS.SALMON};
   }
   form {
     padding: 50px;
-    Button {
-      font-weight: 700;
-    }
+
     Input {
       margin: 6px 0;
     }
   }
   @media (max-width: 769px) {
     margin-top: 30px;
-    width: 90%;
+    width: 100%;
+    border-radius: 0;
+    form {
+      padding: 35px;
+    }
   }
 `;
 
@@ -39,5 +41,6 @@ export const CardButton = styled.div`
   margin: 20px;
   Button {
     border-radius: 4px;
+    margin-bottom: 40px;
   }
 `;

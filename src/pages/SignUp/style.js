@@ -9,13 +9,20 @@ export const Info = styled.div`
   align-items: center;
   gap: 15px;
   text-align: center;
+  h2 {
+    font-size: 28px;
+  }
+  h4 {
+    width: 30ch;
+    font-size: 22px;
+  }
   @media (max-width: 769px) {
     h2,
     h4 {
-      width: 50%;
       display: none;
     }
     img {
+      padding-top: 70px;
       width: 100px;
     }
   }

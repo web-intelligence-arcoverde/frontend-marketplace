@@ -33,7 +33,7 @@ function Search() {
   }, [positionUser]);
 
   return (
-    <Container justify="none">
+    <Container responsive justify="none">
       <Header>
         <div>
           <img src={Icons.shopping} alt="" />
