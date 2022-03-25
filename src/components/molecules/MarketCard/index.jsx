@@ -24,15 +24,19 @@ const MarketCard = ({ market }) => {
       </div>
       <CardInfos>
         <b>{market.nome}</b>
-        <div>
-          <span className="mdi mdi-star" />
-          <Text>
-            <b>2,8</b>
-          </Text>
-          <span className="mdi mdi-cash-multiple" />
-          <Text>$$$</Text>
-          <span className="mdi mdi-crosshairs-gps" />
-          <Text>2.9km</Text>
+        <div className="mdicontainer">
+          <div className="gap">
+            <span className="mdi mdi-star" />
+            <Text><b>2,8</b></Text>
+          </div>
+          <div className="gap">
+            <span className="mdi mdi-cash-multiple" />
+            <Text>$$$</Text>
+          </div>
+          <div className="gap">
+            <span className="mdi mdi-crosshairs-gps" />
+            <Text>2.9km</Text>
+          </div>
         </div>
         <label className="badge-secondary">Frete gratis</label>
       </CardInfos>

@@ -19,6 +19,12 @@ export const Container = styled.div`
     height: 245px;
     padding: 0px !important;
     margin: 0px;
+  }
+  @media (max-width: 769px) {
+    bottom: 20px;
+    .market-list {
+      height: 155px;
+    }
     ::-webkit-scrollbar {
       display: none;
     }

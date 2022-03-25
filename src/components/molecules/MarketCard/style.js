@@ -17,6 +17,9 @@ export const Container = styled.li`
     transition: 0.5s;
     background-color: #f6f5f5;
   }
+  @media (max-width: 769px) {
+    width: 100px;
+  }
 
   img {
     width: 100%;
@@ -24,6 +27,9 @@ export const Container = styled.li`
     border-radius: 5px;
     vertical-align: baseline;
     background: #fff;
+    @media (max-width: 769px) {
+      height: 60px;
+    }
   }
   b {
     margin-bottom: 0;
@@ -52,6 +58,35 @@ export const CardInfos = styled.div`
     background: #503e9d10;
     padding: 4px 8px;
     border-radius: 4px;
+    @media (max-width: 769px) {
+      display: none;
+    }
+  }
+  .mdicontainer {
+    display: flex;
+    flex-direction: row;
+  }
+  @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    b {
+      font-size: 14px;
+    }
+    .mdi {
+      width: 10px;
+    }
+    .mdicontainer {
+      flex-direction: column;
+    }
+    .gap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
   }
 `;
 export const Text = styled.span`
